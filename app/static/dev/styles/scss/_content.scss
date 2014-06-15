@@ -1,0 +1,46 @@
+$drawerWidth: 300px;
+
+.container
+{
+	position:fixed;
+	left:0px;
+	right:0px;
+	top:60px;
+	bottom:0px;
+
+	background-color:#FFF;
+
+	margin:0 0;
+
+	.drawer
+	{
+		width:$drawerWidth;
+		background-color:$yunite-sidebar;
+		float:left;
+		height:100%;
+		
+		overflow: auto;
+
+		.drawer_scroller
+		{
+			height:120%;
+			width:100%;
+		}
+	}
+
+	.content
+	{
+		width:1000px - $drawerWidth;
+		background-color:#FFF;
+		float:left;
+		height:100%;
+
+		overflow: auto;
+
+		.content_scroller
+		{
+			height:120%;
+			width:100%;
+		}
+	}
+}

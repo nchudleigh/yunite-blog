@@ -1,0 +1,53 @@
+@import "compass/css3/transition";
+$default-transition-property : background-color;
+$default-transition-duration : 400ms;
+$default-transition-function : false;
+$default-transition-delay    : false;
+.card
+	{
+		@include single-transition(background-color); 
+		background-color:lighten($yunite-sidebar,2%);
+		margin:3px 0px;
+		padding: 15px 10px;
+		height:50px;
+		color:#FFF;
+		font-size: 12pt;
+		cursor:pointer;
+		border-left:2px solid $yunite-lblue;
+		
+
+		.avatar
+		{
+			float:left;
+			margin-right:10px;
+			margin-bottom:10px;
+		}
+
+		.avatar img
+		{
+			@include border-radius(50%);
+		}
+
+		.cardTitle
+		{
+			margin-top:0px;
+			margin-bottom:2px;
+			font-size:11pt;
+		}
+		.cardInfo
+		{
+			font-size:8pt;
+			float:left;
+			line-height: 1.25;
+		}
+}
+
+.card:hover
+{
+	background-color: darken($yunite-lblue,5%);
+}
+
+.currentCard
+{
+	background-color:  $yunite-lblue !important; 
+}

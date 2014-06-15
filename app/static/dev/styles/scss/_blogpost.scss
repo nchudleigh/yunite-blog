@@ -1,0 +1,28 @@
+$panel-border: #DEDEDE;
+
+.bpost
+{
+	max-width: 1000px;
+	width:95%;
+	background-color: #FFF;
+	border:15px solid $panel-border;
+	margin: 10px auto;
+	padding: 10px 10px;
+
+	.bpostTitle
+	{
+		font-size: 18pt;
+		border-bottom:1px solid $panel-border;
+		margin-bottom:10px;
+	}
+
+	.bpostInfo
+	{
+
+	}
+
+	.bpostContent
+	{
+
+	}
+}

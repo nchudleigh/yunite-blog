@@ -1,0 +1,64 @@
+// Variables
+$main-color: #00a89e; 
+$yunite-lblue-alt: #4481C4;
+$yunite-lblue: #008cba;
+$yunite-lblue-hover: #0078a0;
+$yunite-aqua: #65CECF;
+$yunite-green-alt: #83c444;
+$yunite-green: #88C84B;
+$yunite-sidebar: #053040;
+$yunite-green-hover: #689b39;
+$yunite-notification-yellow: #FFFFF2;
+$yunite-warning: #FFCC33;
+$yunite-warning-hover: darken($yunite-warning, 15%);
+$yunite-alert: #c60f13;
+$yunite-alert-hover: darken($yunite-alert, 10%);
+$yunite-like: #C375B0;
+$yunite-gold: #e4b727;
+$yunite-orange: #eb6420;
+
+
+$sans-serif: "rooney-sans", sans-serif;
+
+// Mixins
+// Border Radius Mixin
+@mixin border-radius($value) {
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	border-radius: $value;
+}
+
+// Filter compile issues
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+body
+{
+	margin:0 0;
+	padding: 0 0;
+	font-family: $sans-serif;
+}
+
+.top_bar
+{
+	height:60px;
+	width:100%;
+	background-color:$yunite-lblue;
+
+	.logo
+	{
+		width:240px;
+		position:relative;
+		margin:0 0;
+		padding:0 20px;
+		a
+		{
+			margin:0 40.5px;
+		}
+	}
+}
