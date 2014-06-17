@@ -9,6 +9,7 @@ ROLE_ADMIN=1
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    img=db.Column(db.String(255))
     email = db.Column(db.String(120), unique=True)
     role = db.Column(db.SmallInteger, default=ROLE_USER)
     created_at = db.Column(db.DateTime)
