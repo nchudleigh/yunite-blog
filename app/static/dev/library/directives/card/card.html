@@ -2,8 +2,8 @@
 	<div class="avatar">
 		<img src="assets/avatars/ben.jpg" alt="" width="45" height="45">
 	</div>
-	<div class="cardTitle">Oh my god, based go, you can fuck my bitch</div>
+	<div class="cardTitle">{{post.title}}</div>
 	<div class="cardInfo">
-		<div class="cardName">Ben</div><div class="cardDate">Jun 15, 2014</div>
+		<div class="cardName">{{post.author}}</div><div class="cardDate">{{post.pub_date | date:'MMM dd, yyyy'}}</div>
 	</div>
 </div>

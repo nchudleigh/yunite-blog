@@ -45,19 +45,17 @@ body {
 }
 /* line 23, scss/_content.scss */
 .container .drawer .drawer_scroller {
-  height: 120%;
   width: 100%;
 }
-/* line 30, scss/_content.scss */
+/* line 29, scss/_content.scss */
 .container .content {
   width: 700px;
   float: left;
   height: 100%;
   overflow: auto;
 }
-/* line 38, scss/_content.scss */
+/* line 37, scss/_content.scss */
 .container .content .content_scroller {
-  height: 120%;
   width: 100%;
 }
 
