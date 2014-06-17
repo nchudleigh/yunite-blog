@@ -1,27 +1,12 @@
 <div class="bpost">
-	
 	<div class="bpostInfo">
 		<img src="assets/avatars/ben.jpg" alt="" width="60" height="60" class="bpostAvatar">
 		<div class="bpostInfoRight">
-			<div class="bpostTitle">Yes, I will be high, because I have hella dank nug</div>
-			<span class="bpostName">Benjamin Bales</span>,
-			<span class="bpostDate">June 16, 2014 @ 4:15pm</span>
+			<div class="bpostTitle">{{post.title}}</div>
+			<span class="bpostName">{{post.author}}</span>,
+			<span class="bpostDate">{{post.pub_date | date:'MMM dd, yyyy @ h:mm a'}}</span>
 		</div>
-		
 	</div>
-	<img class="bpostImage" src="http://ldlc.dreamhosters.com/media/w/IMPtUhyRmKB/IMPGPxzeh1e.jpg" alt="">
-	<div class="bpostContent">
-		<h1>Whats new</h1><p>Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne </p>
-		<h1>Updates</h1><p>what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Y</p>
-		<h2>Poosy</h2><p>o mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo ma</p>
-		<h1>#YOLO</h1>yne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do <a href="">Yo nigga</a>.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.Yo mayne what it do.
-		<p>
-			
-			<ul>
-				<li>Floppy Dick</li>
-				<li>Prolapsed Asshole</li>
-				<li>Meat Flaps</li>
-			</ul>
-		</p>
-	</div>
+	<img class="bpostImage" src="{{post.img}}" alt="">
+	<div class="bpostContent" ng-bind-html="post.body | unsafe"></div>
 </div>

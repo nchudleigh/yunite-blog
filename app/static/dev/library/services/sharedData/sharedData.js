@@ -1,7 +1,7 @@
 (function(angular, undefined) {
     'use strict';
     
-    angular.module('scratchd.sharedData', [])
+    angular.module('sharedData', [])
     
     .service('sharedDataService', function($timeout) {
         var data = {};

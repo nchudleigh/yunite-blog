@@ -10,6 +10,7 @@
       , 'navigation'
       , 'postster'
       , 'home'
+      , 'sharedData'
     ])
     
     .config(function($stateProvider, $sceProvider, $urlRouterProvider, $logProvider, $translateProvider, growlProvider) {
@@ -24,7 +25,7 @@
     
     });
 
-    app.controller("blogController",['$scope',function($scope){
+    app.controller("blogController",['$scope','$rootScope','getBlogPosts',function($scope,$rootScope,getBlogPosts){
 
       $scope.resizeContent = function()
       {
@@ -32,7 +33,28 @@
         $(".content").width(currentWidth);
       }
 
+      $scope.updatePosts = function(data){
+        $rootScope.posts = eval(data);
+        $rootScope.$emit('newPostsEvent');
+        $scope.posts = $rootScope.posts;
+      };
+
+      // Window/content resizing
       angular.element(window).bind('resize',$scope.resizeContent);
+
+      // Get blog post data
+      getBlogPosts.success(function(data,status,headers,config){
+        $scope.updatePosts(data);
+      }).error(function(data,status,headers,config){
+        console.log("Failure");
+      });
+    }]);
+
+    app.controller("sideBarController",['$scope','$rootScope',function($scope,$rootScope){
+      $rootScope.$on('newPostsEvent', function() {
+        $scope.posts = $rootScope.posts;
+      });
+
 
     }]);
 
@@ -60,17 +82,19 @@
         replace : 'true',
         templateUrl : 'library/directives/blogPost/blogPost.html',
         link : function(scope,element){
-
+          element.children(".bpostTitle").html();
         }
       };
     });
 
-    app.factory("getPosts",["$scope","$http",function($scope,$http){
-      $http.get("/json/posts.json").success(function(data,status,headers,config){
-        $scope.posts = data;
-      }).error(function(data,status,headers,config){
-
-      });
+    app.factory('getBlogPosts',['$http',function($http){
+      return $http.get("/json/posts.json");
     }]);
+
+    app.filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
+    });
 
 }(window, document, location, navigator, jQuery, angular, undefined));
