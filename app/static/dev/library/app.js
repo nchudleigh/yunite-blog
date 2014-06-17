@@ -8,7 +8,7 @@
       , 'pascalprecht.translate'
       , 'angular-growl'
       , 'navigation'
-      , 'footer'
+      , 'postster'
       , 'home'
       , 'sharedData'
     ])

@@ -9,6 +9,7 @@ from app import app, db
 from flask.ext.script import Manager, Server
 from flask.ext.migrate import Migrate, MigrateCommand
 
+app.secret_key="yes, I will be high because I have hella dank nug"
 migrate = Migrate(app, db)
 
 manager = Manager(app)

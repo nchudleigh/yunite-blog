@@ -12,7 +12,7 @@
           , onEnter: function($timeout) {
                 $timeout(function() {
                     $('[ui-view=navigation]').css({display:'block'});
-                    $('[ui-view=footer]').css({display:'block'});
+                    $('[ui-view=postster]').css({display:'block'});
                     $('[ui-view=home]').css({display:'block'});                    
                 });
             }
@@ -24,9 +24,9 @@
                     controller: 'navigationController'
                   , templateUrl: '/library/modules/navigation/views/navigation.html'
                 }
-              , 'footer': {
-                    controller: 'footerController'
-                  , templateUrl: '/library/modules/footer/views/footer.html'
+              , 'postster': {
+                    controller: 'poststerController'
+                  , templateUrl: '/library/modules/postster/views/postster.html'
                 }
               , 'home': {
                     controller: 'homeController'

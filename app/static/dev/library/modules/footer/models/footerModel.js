@@ -1,9 +1,9 @@
 (function(window, document, location, navigator, $, angular, undefined) {
     'use strict';
     
-    angular.module('footer.model', [])
+    angular.module('postster.model', [])
     
-    .factory('footerService', function($http) {
+    .factory('poststerService', function($http) {
         
     })
     
