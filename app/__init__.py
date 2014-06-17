@@ -1,15 +1,12 @@
 from __future__ import absolute_import, print_function
 
-from pymongo import Connection
-from flask import Flask, render_template, g, request
+from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy
 
-
-# Create app
+# Create app and set db
 app = Flask(__name__, static_folder='static/dev', static_url_path='')
-
-# Connect to then select database
-db_conn = Connection(host="mongodb://localhost")
-db = db_conn['boilerplate_database']
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql+psycopg2://admin:database@localhost:5432/blog'
+db = SQLAlchemy(app)
 
 # Import blueprints from app
 from app.foo import foo
@@ -19,3 +16,6 @@ app.register_blueprint(foo, url_prefix="/api/foo")
 
 # Import main views from app
 from app import views
+
+#import models from app
+from app import models
