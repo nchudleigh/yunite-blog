@@ -69,8 +69,8 @@
       $http.get("/json/posts.json").success(function(data,status,headers,config){
         $scope.posts = data;
       }).error(function(data,status,headers,config){
-        
-      }};
+
+      });
     }]);
 
 }(window, document, location, navigator, jQuery, angular, undefined));
