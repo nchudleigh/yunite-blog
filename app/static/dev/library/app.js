@@ -20,7 +20,7 @@
         $sceProvider.enabled(true);
                 
         $translateProvider.preferredLanguage('en');
-        $logProvider.debugEnabled(false);
+        $logProvider.debugEnabled(true);
         growlProvider.globalTimeToLive(5000);
     
     });
