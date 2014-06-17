@@ -1,9 +1,9 @@
 from __future__ import absolute_import, print_function
 
 from flask import request, jsonify, send_file
-from . import foo
 from app import db
-from app.models import 
+from . import foo
+from datetime import datetime
 
 
 @foo.route('/', methods=['GET'])
@@ -21,7 +21,8 @@ def index():
 def create_post():
 
     data = json_util.loads(request.data)
-
+    
+    #data checking
     if not data.get('title'): 
         return jsonify({
             'status': 400,
@@ -40,15 +41,17 @@ def create_post():
                 'message': 'No body was provided.'
             }
         }), 400
-   
 
-
+    #valid data add to db
+    post = Post(title=data['title'],body=['body'],user=None)
+    db.session.add(post)
+    db.session.commit()
     
-
+    
     return jsonify({
         'status': 200,
         'error': None,
         'result':{
-            'message':'Post Successful'
+            'message':'Post Successful!'
             }
         }),200

@@ -1,4 +1,5 @@
 from __future__ import absolute_import, print_function
+from flask.ext.migrate import Migrate, MigrateCommand
 
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy

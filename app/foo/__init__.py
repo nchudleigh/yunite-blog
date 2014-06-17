@@ -5,3 +5,4 @@ from flask import Blueprint
 foo = Blueprint('foo', __name__)
 
 from . import views
+from . import models
