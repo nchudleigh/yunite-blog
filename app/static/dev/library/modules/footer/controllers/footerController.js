@@ -1,9 +1,9 @@
 (function(window, document, location, navigator, $, angular, undefined) {
     'use strict';
 
-    angular.module('footer.controller', [])
+    angular.module('postster.controller', [])
 
-    .controller('footerController', function($scope, $state, growl) {
+    .controller('poststerController', function($scope, $state, growl) {
         
     })
 
