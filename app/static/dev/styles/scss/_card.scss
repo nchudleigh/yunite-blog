@@ -33,6 +33,9 @@ $default-transition-delay    : false;
 			margin-top:0px;
 			margin-bottom:2px;
 			font-size:11pt;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+  			overflow: hidden;
 		}
 		.cardInfo
 		{

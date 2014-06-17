@@ -8,8 +8,6 @@ $drawerWidth: 300px;
 	top:60px;
 	bottom:0px;
 
-	background-color:#FFF;
-
 	margin:0 0;
 
 	.drawer
@@ -31,7 +29,6 @@ $drawerWidth: 300px;
 	.content
 	{
 		width:1000px - $drawerWidth;
-		background-color:#FFF;
 		float:left;
 		height:100%;
 
