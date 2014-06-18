@@ -38,6 +38,9 @@ class User(db.Model):
     def is_anonymous(self):
         return False
 
+    def is_active(self):
+        return True
+
     def get_id(self):
         return unicode(self.email)
 

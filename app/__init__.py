@@ -18,8 +18,11 @@ from app.posts import posts
 from app.users import users
 
 # Register all blueprints to the main app
-app.register_blueprint(posts, url_prefix="/api/posts")
+app.register_blueprint(posts)
+app.register_blueprint(users)
 
 # Import main views from app
 from app import views
 
+#Set login bootback
+login_manager.login_view ='login'
