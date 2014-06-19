@@ -52,6 +52,96 @@
   background-color: #008cba !important;
 }
 
+<<<<<<< HEAD
+/* line 4, scss/_blogpost.scss */
+.bpost {
+  max-width: 1000px;
+  width: 85%;
+  background-color: #FFF;
+  border: 15px solid #dedede;
+  margin: 10px auto;
+  padding: 15px 15px;
+}
+/* line 13, scss/_blogpost.scss */
+.bpost .bpostInfo {
+  width: 100%;
+  border-bottom: 1px solid #dedede;
+  height: 70px;
+  margin-bottom: 15px;
+}
+/* line 20, scss/_blogpost.scss */
+.bpost .bpostInfo .bpostAvatar {
+  float: left;
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* line 29, scss/_blogpost.scss */
+.bpost .bpostInfo .bpostTitle {
+  font-size: 18pt;
+  margin-bottom: 0px;
+  padding-top: 7px;
+  color: #008cba;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 41, scss/_blogpost.scss */
+.bpost .bpostInfo .bpostName {
+  font-size: 8pt;
+}
+/* line 46, scss/_blogpost.scss */
+.bpost .bpostInfo .bpostDate {
+  font-size: 8pt;
+}
+/* line 54, scss/_blogpost.scss */
+.bpost .bpostContent h1, .bpost .bpostContent h2{
+  font-size: 18pt;
+  margin-top: 0px;
+  padding: 0 0;
+  color: #008cba !important;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 8px;
+}
+/* line 64, scss/_blogpost.scss */
+.bpost .bpostContent h2 {
+  font-size: 16pt;
+}
+/* line 68, scss/_blogpost.scss */
+.bpost .bpostContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 74, scss/_blogpost.scss */
+.bpost .bpostContent ul > li {
+  padding-left: 1em;
+  text-indent: -.7em;
+}
+/* line 79, scss/_blogpost.scss */
+.bpost .bpostContent ul > li:before {
+  content: "■ ";
+  padding-right: 6px;
+  color: #008cba;
+  /* or whatever color you prefer */
+}
+/* line 86, scss/_blogpost.scss */
+.bpost .bpostContent a {
+  color: #008cba;
+  text-decoration: none;
+}
+/* line 92, scss/_blogpost.scss */
+.bpost .bpostContent a:hover {
+  color: #006687;
+}
+/* line 97, scss/_blogpost.scss */
+.bpost .bpostContent a:visited {
+  color: #00526e;
+=======
 @media screen and (min-width: 700px) {
   /* line 2, scss/_header.scss */
   body {
@@ -268,6 +358,7 @@
     margin-bottom: 10px;
     border-bottom: 1px solid #dedede;
   }
+>>>>>>> 0e44cdb7f7463576bfe59bb4d9f89696aeb1a5b2
 }
 @media screen and (max-width: 700px) {
   /* line 2, scss/_header.mobile.scss */
