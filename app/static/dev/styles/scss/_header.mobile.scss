@@ -12,21 +12,19 @@ body
 	height:60px;
 	width:100%;
 	background-color:$yunite-lblue;
-	
+
 	.mobile_menu
 	{
-		display:none;
+		position:fixed;
+		left:10px;
+		top:10px;
+		opacity:0.85;
 	}
 
 	.logo
 	{
-		width:240px;
+		width:120px;
 		position:relative;
-		margin:0 0;
-		padding:0 20px;
-		a
-		{
-			margin:0 40.5px;
-		}
+		margin:0 auto;
 	}
 }

@@ -1,7 +1,7 @@
 .bpost
 {
 	max-width: 1000px;
-	width:85%;
+	width:80%;
 	background-color: #FFF;
 	border:15px solid $panel-border;
 	margin: 10px auto;
@@ -25,7 +25,7 @@
 
 		.bpostTitle
 		{
-			font-size: 18pt;
+			font-size: 15pt;
 			margin-bottom:0px;
 			padding-top:7px;
 			color:$yunite-lblue;
@@ -48,9 +48,10 @@
 
 	.bpostContent
 	{
+		font-size:10pt;
 		h1, h2
 		{
-			font-size:18pt;
+			font-size:15pt;
 			margin-top:0px;
 			padding:0 0;
 			color:$yunite-lblue;
@@ -60,7 +61,7 @@
 
 		h2
 		{
-			font-size:16pt;
+			font-size:14pt;
 		}
 
 		ul {

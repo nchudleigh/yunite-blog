@@ -5,29 +5,28 @@
 	right:0px;
 	top:60px;
 	bottom:0px;
-
+	overflow:hidden;
 	margin:0 0;
-
 	.drawer
 	{
 		@include single-transition(margin-left); 
-		width:$drawerWidth;
+		width:$drawerWidthMobile;
 		background-color:$yunite-sidebar;
 		float:left;
 		height:100%;
-		
+		position:absolute;
+		z-index:10;
 		overflow: auto;
 
 		.drawer_scroller
 		{
 			width:100%;
-			position:relative;
 			padding-top:76px;
 			#page_top
 			{
 				@include single-transition(background-color); 
 				@include single-transition(border-color); 
-				background-color:darken($yunite-sidebar,2%);
+				background-color:darken($yunite-sidebar,3%);
 				margin:0px 0px;
 				padding: 15px 10px;
 				color:#FFF;
@@ -36,7 +35,7 @@
 				border:2px solid darken($yunite-sidebar,2%);
 				border-left:2px solid darken($yunite-lblue,2%);
 				height:45px;
-				width:($drawerWidth) - (39px);
+				width:($drawerWidthMobile) - (0px);
 				position:fixed;
 				top:60px;
 				img
@@ -54,11 +53,10 @@
 					margin-top:15px;
 					font-size:11pt;
 					padding-left:55px;
-
 				}
 			}
 
-			#page_top:hover
+			#page_top:active
 			{
 				background-color:darken($yunite-lblue,2%);
 				border:2px solid darken($yunite-lblue,2%);
@@ -66,19 +64,27 @@
 		}
 	}
 
+	.drawer_show
+	{
+		margin-left:0px;
+	}
+
+	.drawer_hidden
+	{
+		margin-left:-$drawerWidthMobile;
+	}
+
 	.content
 	{
-		@include single-transition(opacity); 
-		width:1000px - $drawerWidth;
-		float:left;
 		height:100%;
-
+		position:absolute;
+		left:0px;
 		overflow: auto;
-
+		z-index:9;
 		.content_scroller
 		{
 			width:100%;
+			margin:0 auto;
 		}
 	}
 }
-																				
