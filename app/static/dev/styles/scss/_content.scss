@@ -16,53 +16,55 @@
 		float:left;
 		height:100%;
 		
-		overflow: auto;
+		overflow: scroll;
+
+		#page_top
+		{
+			@include single-transition(background-color); 
+			@include single-transition(border-color); 
+			background-color:darken($yunite-sidebar,2%);
+			margin:0px 0px;
+			padding: 15px 10px;
+			color:#FFF;
+			font-size: 12pt;
+			cursor:pointer;
+			border:2px solid darken($yunite-sidebar,2%);
+			border-left:2px solid darken($yunite-lblue,2%);
+			height:45px;
+			width:($drawerWidth) - (37px);
+			position:fixed;
+			z-index:11;
+			top:60px;
+			img
+			{
+				@include border-radius(50%);
+				width:45px;
+				height:45px;
+				position:absolute;
+				left: 12px;
+				background-color: darken($yunite-lblue,20%);
+			}
+
+			div
+			{
+				margin-top:15px;
+				font-size:11pt;
+				padding-left:55px;
+			}
+		}
+
+		#page_top:hover
+		{
+			background-color:darken($yunite-lblue,2%);
+			border:2px solid darken($yunite-lblue,2%);
+		}
 
 		.drawer_scroller
 		{
 			width:100%;
 			position:relative;
 			padding-top:76px;
-			#page_top
-			{
-				@include single-transition(background-color); 
-				@include single-transition(border-color); 
-				background-color:darken($yunite-sidebar,2%);
-				margin:0px 0px;
-				padding: 15px 10px;
-				color:#FFF;
-				font-size: 12pt;
-				cursor:pointer;
-				border:2px solid darken($yunite-sidebar,2%);
-				border-left:2px solid darken($yunite-lblue,2%);
-				height:45px;
-				width:($drawerWidth) - (39px);
-				position:fixed;
-				top:60px;
-				img
-				{
-					@include border-radius(50%);
-					width:45px;
-					height:45px;
-					position:absolute;
-					left: 12px;
-					background-color: darken($yunite-lblue,20%);
-				}
-
-				div
-				{
-					margin-top:15px;
-					font-size:11pt;
-					padding-left:55px;
-
-				}
-			}
-
-			#page_top:hover
-			{
-				background-color:darken($yunite-lblue,2%);
-				border:2px solid darken($yunite-lblue,2%);
-			}
+			
 		}
 	}
 
@@ -72,9 +74,9 @@
 		width:1000px - $drawerWidth;
 		float:left;
 		height:100%;
-
+		position:absolute;
 		overflow: auto;
-
+		right:0px;
 		.content_scroller
 		{
 			width:100%;
