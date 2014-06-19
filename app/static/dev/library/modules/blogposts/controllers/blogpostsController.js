@@ -19,7 +19,10 @@
       }
 
       $scope.updatePosts = function(data){
-        $rootScope.posts = eval(data);
+        $rootScope.result = eval(data);
+        //$rootScope.posts = $rootScope.result.
+        $rootScope.posts = eval($rootScope.result.result.data);
+        console.log($rootScope.posts);
         $rootScope.$emit('newPostsEvent');
         $scope.posts = $rootScope.posts;
         setTimeout(function(){$scope.activePost();},1000);
