@@ -7,24 +7,28 @@ from . import posts
 from .models import Post, PostSerializer
 from datetime import datetime
 
-@posts.route('/api/all')
+@posts.route('/api/posts/all')
 def all_posts():
+
     all_posts = Post.query.all()
-    posts = PostSerializer(all_posts, many=True).data
+    posts = PostSerializer(all_posts, many=True).json
 
     return jsonify({
         'status': 200,
         'error': None,
         'result':{
             'data':posts,
-            'message':'Success returning posts! whats gucci!'
+            'message':'Success returning all posts! whats gucci!'
             }
         }),200
 
-@posts.route('/api/my_posts')
+@posts.route('/api/posts/my_posts')
 @login_required
 def my_posts():
-    posts = posts.query.filter_by(author=current_user)
+
+    my_posts = posts.query.filter_by(author=current_user)
+    posts = PostSerializer(my_posts, many=True).json
+    
     return jsonify({
         'status': 200,
         'error': None,
@@ -40,7 +44,6 @@ def create_post():
 
     print (request.data)
     data = json.loads(request.data)
-    
     
     #data checking
     if not data.get('title'): 
@@ -96,8 +99,6 @@ def delete_post():
                 'message': 'No post found.'
             }
         }), 400
-
-
 
     return jsonify({
         'status': 200,

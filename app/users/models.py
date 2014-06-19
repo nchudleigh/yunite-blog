@@ -1,6 +1,7 @@
 from __future__ import absolute_import, print_function
 from datetime import datetime
 import functools, uuid, pbkdf2
+from marshmallow import Serializer, fields
 
 from app import db
 
@@ -65,3 +66,9 @@ class User(db.Model):
             'indexes': ['-created_at'],
             'ordering': ['-created_at']
             }
+
+
+class UserSerializer(Serializer):
+    id=fields.Integer()
+    img=fields.String()
+    email=fields.String()

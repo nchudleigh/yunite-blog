@@ -6,8 +6,23 @@ from app import db, login_manager
 
 from flask.ext.login import login_user, logout_user, login_required, current_user
 from . import users
-from .models import User
+from .models import User, UserSerializer
 from datetime import datetime
+
+@users.route('/api/users/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+
+    user = UserSerializer(User.query.get(id=user_id)).json
+
+    return jsonify({
+        'status': 200,
+        'error': None,
+        'result':{
+            'data':user,
+            'message':'Success returning a user'
+            }
+        }),200
+
 
 
 @login_manager.user_loader
