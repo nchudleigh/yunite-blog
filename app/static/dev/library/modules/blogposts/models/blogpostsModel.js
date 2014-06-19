@@ -5,6 +5,6 @@
 
 	.factory('getBlogPosts',['$http',function($http){
 			console.log("Request to db");
-	        return $http.get("/json/posts.json");
+	        return $http.get("/api/all");
 	}]);
 ;}(window, document, location, navigator, jQuery, angular, undefined));

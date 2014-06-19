@@ -9,16 +9,6 @@ from datetime import datetime
 import json
 
 
-@posts.route('/', methods=['GET'])
-def index():
-    return json.dumps({
-    'status': 200,
-    'error': None,
-    'result': {
-      'message': 'Hello World'
-      }
-    }), 200
-
 @posts.route('/api/all')
 def all_posts():
     posts = Post.query.all()
