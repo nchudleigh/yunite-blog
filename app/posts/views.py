@@ -4,7 +4,9 @@ from flask import request, jsonify, send_file
 from app import db
 from flask.ext.login import current_user, login_required
 from . import posts
+from .models import Post
 from datetime import datetime
+import json
 
 
 @posts.route('/', methods=['GET'])
@@ -18,11 +20,12 @@ def index():
     }), 200
 
 
-@posts.route('/post', methods=["POST"])
+@posts.route('/manage/create_post', methods=['POST'])
 @login_required
 def create_post():
 
-    data = json_util.loads(request.data)
+    data = json.loads(request.data)
+    print(data)
     
     #data checking
     if not data.get('title'): 
@@ -45,7 +48,7 @@ def create_post():
         }), 400
 
     #valid data add to db
-    post = Post(title=data['title'],body=['body'],user=None)
+    post = Post(title=data['title'],body=data['body'],author=current_user)
     db.session.add(post)
     db.session.commit()
     
