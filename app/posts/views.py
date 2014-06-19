@@ -4,14 +4,14 @@ from flask import request, jsonify, send_file
 from app import db
 from flask.ext.login import current_user, login_required
 from . import posts
-from .models import Post
+from .models import Post, PostSerializer
 from datetime import datetime
-import json
-
 
 @posts.route('/api/all')
 def all_posts():
-    posts = Post.query.all()
+    all_posts = Post.query.all()
+    posts = PostSerializer(all_posts, many=True).data
+
     return jsonify({
         'status': 200,
         'error': None,

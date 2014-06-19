@@ -1,6 +1,7 @@
 from app.users.models import User
 from datetime import datetime
 from app import db
+from marshmallow import Serializer, fields
 
 class Post(db.Model):
 
@@ -21,3 +22,10 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post %r>' % self.title
+
+class PostSerializer(Serializer):
+    id=fields.Integer()
+    title=fields.String()
+    body=fields.String()
+    pub_date=fields.DateTime()
+    author_id=fields.Integer()
