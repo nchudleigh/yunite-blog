@@ -11,7 +11,7 @@ import json
 
 @posts.route('/', methods=['GET'])
 def index():
-    return json_util.dumps({
+    return json.dumps({
     'status': 200,
     'error': None,
     'result': {
@@ -19,13 +19,38 @@ def index():
       }
     }), 200
 
+@posts.route('/api/all')
+def all_posts():
+    posts = Post.query.all()
+    return jsonify({
+        'status': 200,
+        'error': None,
+        'result':{
+            'data':posts,
+            'message':'Success returning posts! whats gucci!'
+            }
+        }),200
+
+@posts.route('/api/my_posts')
+@login_required
+def my_posts():
+    posts = posts.query.filter_by(author=current_user)
+    return jsonify({
+        'status': 200,
+        'error': None,
+        'result':{
+            'data':posts,
+            'message':'Success returning your posts!'
+            }
+        }),200
 
 @posts.route('/manage/create_post', methods=['POST'])
 @login_required
 def create_post():
 
+    print (request.data)
     data = json.loads(request.data)
-    print(data)
+    
     
     #data checking
     if not data.get('title'): 
@@ -58,6 +83,37 @@ def create_post():
         'error': None,
         'result':{
             'message':'Post Successful!'
+            }
+        }),200
+
+
+
+@posts.route('/manage/delete_post', methods=['POST'])
+@login_required
+def delete_post():
+
+    try :
+        f_post=request.data.get('post_id')
+        post=Post.query.get(id=f_post)
+        db.session.delete(post)
+        db.session.commit()
+
+    except:
+        return jsonify({
+            'status': 400,
+            'error': 'No post found',
+            'result': {
+                'message': 'No post found.'
+            }
+        }), 400
+
+
+
+    return jsonify({
+        'status': 200,
+        'error': None,
+        'result':{
+            'message':'Post deleted!'
             }
         }),200
 

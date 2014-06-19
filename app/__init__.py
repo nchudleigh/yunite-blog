@@ -9,6 +9,7 @@ from flask.ext.login import LoginManager
 # Create app and set db
 app = Flask(__name__, static_folder='static/dev', static_url_path='')
 app.config['SQLALCHEMY_DATABASE_URI']='postgresql+psycopg2://admin:database@localhost:5432/blog'
+app.config['SEND_FILE_MAX_AGE_DEFAULT']=0
 db = SQLAlchemy(app)
 login_manager=LoginManager()
 login_manager.init_app(app)

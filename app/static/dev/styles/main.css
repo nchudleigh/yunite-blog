@@ -158,11 +158,11 @@ body {
   font-size: 8pt;
 }
 /* line 54, scss/_blogpost.scss */
-.bpost .bpostContent h1, .bpost .bpostContent h2 {
+.bpost .bpostContent h1, .bpost .bpostContent h2{
   font-size: 18pt;
   margin-top: 0px;
   padding: 0 0;
-  color: #008cba;
+  color: #008cba !important;
   border-bottom: 1px solid #dedede;
   padding-bottom: 8px;
 }

@@ -3,7 +3,7 @@ from __future__ import absolute_import, print_function
 import json
 from flask import request, jsonify, render_template
 from app import db, login_manager
-from flask.ext.login import login_user, logout_user
+from flask.ext.login import login_user, logout_user, login_required, current_user
 from . import users
 from .models import User
 from datetime import datetime
@@ -16,7 +16,7 @@ def load_user(user_email):
 
 @users.route('/manage/login', methods=['POST'])
 def login():
-
+    
     data = json.loads(request.data)
     
     if data.get('email') is None:
@@ -60,12 +60,12 @@ def login():
                 }
             }),200
 
-@users.route('/logout')
+@users.route('/manage/logout')
 @login_required
 def logout():
     
     logout_user()
-    
+
     return jsonify({
             'status':200,
             'error':None,
