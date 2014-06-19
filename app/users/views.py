@@ -3,7 +3,7 @@ from __future__ import absolute_import, print_function
 import json
 from flask import request, jsonify, render_template
 from app import db, login_manager
-from flask.ext.login import login_user, logout_user
+from flask.ext.login import login_user, logout_user, login_required
 from . import users
 from .models import User
 from datetime import datetime
