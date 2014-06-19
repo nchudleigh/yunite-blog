@@ -21,8 +21,8 @@ manager.add_command('db', MigrateCommand)
 manager.add_command("dev", Server(
     use_debugger = True,
     use_reloader = True,
-    host = '127.0.0.1',
-    port = 5000
+    host = '0.0.0.0',
+    port = 8000
 ))
 
 manager.add_command("prod", Server(

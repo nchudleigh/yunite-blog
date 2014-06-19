@@ -27,31 +27,10 @@
         <title>Yunite Blog</title>
 
         <link href="/styles/main.css" rel="stylesheet" type="text/css" />
-
-        <script type="text/javascript" src="//use.typekit.net/rml7arq.js"></script>
-        <!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
     </head>
     <body>
-        <div class="top_bar">
-            <div class="logo">
-                <a>
-                    <img src="/assets/images/yunite-logo.png" height="60" width="119" alt="">
-                </a>
-            </div>
-        </div>
+        <div ng-view></div>
 
-        <div class="container">
-            <div class="drawer">
-                <div class="drawer_scroller" ng-controller="sideBarController">
-                    <card ng-repeat="post in posts"></card>
-                </div>
-            </div>
-            <div class="content" >
-                <div class="content_scroller" ng-controller="blogController" ng-init="resizeContent()">
-                    <blog-post ng-repeat="post in posts"></blog-post>
-                </div>
-            </div>
-        </div>
         <script src="/components/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="/components/bootstrap/bootstrap.min.js" type="text/javascript"></script>
         <script src="/components/moment/moment.js" type="text/javascript"></script>
@@ -71,20 +50,24 @@
         <script src="/components/angular-moment/angular-moment.min.js" type="text/javascript"></script>
         <script src="/components/angular-growl/angular-growl.min.js" type="text/javascript"></script>
         <script src="/components/ng-table/ng-table.js" type="text/javascript"></script>
+        <script src="/components/angular-route/angular-route.min.js" type="text/javascript"></script>
         <script src="/components/ng-iscroll/ng-iscroll.min.js" type="text/javascript"></script>
+        <script src="/library/services/sharedData/sharedData.js" type="text/javascript"></script>
         
-        <script src="/library/modules/navigation/controllers/navigationController.js" type="text/javascript"></script>
-        <script src="/library/modules/navigation/models/navigationModel.js" type="text/javascript"></script>
-        <script src="/library/modules/navigation/navigation.js" type="text/javascript"></script>
+        <script src="/library/modules/sidebar/controllers/sidebarController.js" type="text/javascript"></script>
+        <script src="/library/modules/sidebar/models/sidebarModel.js" type="text/javascript"></script>
+        <script src="/library/modules/sidebar/sidebar.js" type="text/javascript"></script>
+        
+        <script src="/library/modules/blogposts/controllers/blogpostsController.js" type="text/javascript"></script>
+        <script src="/library/modules/blogposts/models/blogpostsModel.js" type="text/javascript"></script>
+        <script src="/library/modules/blogposts/blogposts.js" type="text/javascript"></script>
 
-         <script src="/library/services/sharedData/sharedData.js" type="text/javascript"></script>
-        <script src="/library/modules/footer/controllers/footerController.js" type="text/javascript"></script>
-        <script src="/library/modules/footer/models/footerModel.js" type="text/javascript"></script>
-        <script src="/library/modules/footer/footer.js" type="text/javascript"></script>        
-        <script src="/library/modules/home/controllers/homeController.js" type="text/javascript"></script>
-        <script src="/library/modules/home/models/homeModel.js" type="text/javascript"></script>
-        <script src="/library/modules/home/home.js" type="text/javascript"></script>
-        
+        <script src="/library/modules/topbar/controllers/topbarController.js" type="text/javascript"></script>
+        <script src="/library/modules/topbar/topbar.js" type="text/javascript"></script>
+
+        <script src="/library/directives/blogPost/blogPost.js" type="text/javascript"></script>
+        <script src="/library/directives/card/card.js" type="text/javascript"></script>
+
         <script src="/library/app.js" type="text/javascript"></script>
     </body>
 </html>

@@ -1,5 +1,17 @@
 @import 'compass/css3/box-shadow';
-@import '_header';
-@import '_content';
+@import '_settings';
 @import '_card';
-@import '_blogpost';
+
+@media screen and (min-width: $mobileTransition)
+{
+	@import '_header';
+	@import '_content';
+	@import '_blogpost';
+}
+
+@media screen and (max-width: $mobileTransition)
+{
+	@import '_header.mobile';
+	@import '_content.mobile';
+	@import '_blogpost.mobile';
+}

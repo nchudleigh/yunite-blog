@@ -1,64 +1,4 @@
 @charset "UTF-8";
-/* line 41, scss/_header.scss */
-body {
-  margin: 0 0;
-  padding: 0 0;
-  font-family: "rooney-sans", sans-serif;
-  background-image: url(/assets/images/halftone.png);
-  background-repeat: repeat;
-}
-
-/* line 51, scss/_header.scss */
-.top_bar {
-  height: 60px;
-  width: 100%;
-  background-color: #008cba;
-}
-/* line 57, scss/_header.scss */
-.top_bar .logo {
-  width: 240px;
-  position: relative;
-  margin: 0 0;
-  padding: 0 20px;
-}
-/* line 63, scss/_header.scss */
-.top_bar .logo a {
-  margin: 0 40.5px;
-}
-
-/* line 4, scss/_content.scss */
-.container {
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  top: 60px;
-  bottom: 0px;
-  margin: 0 0;
-}
-/* line 14, scss/_content.scss */
-.container .drawer {
-  width: 300px;
-  background-color: #053040;
-  float: left;
-  height: 100%;
-  overflow: auto;
-}
-/* line 23, scss/_content.scss */
-.container .drawer .drawer_scroller {
-  width: 100%;
-}
-/* line 29, scss/_content.scss */
-.container .content {
-  width: 700px;
-  float: left;
-  height: 100%;
-  overflow: auto;
-}
-/* line 37, scss/_content.scss */
-.container .content .content_scroller {
-  width: 100%;
-}
-
 /* line 7, scss/_card.scss */
 .card {
   -webkit-transition: background-color 400ms;
@@ -112,6 +52,7 @@ body {
   background-color: #008cba !important;
 }
 
+<<<<<<< HEAD
 /* line 4, scss/_blogpost.scss */
 .bpost {
   max-width: 1000px;
@@ -200,11 +141,449 @@ body {
 /* line 97, scss/_blogpost.scss */
 .bpost .bpostContent a:visited {
   color: #00526e;
+=======
+@media screen and (min-width: 700px) {
+  /* line 2, scss/_header.scss */
+  body {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: "rooney-sans", sans-serif;
+    background-image: url(/assets/images/halftone.png);
+    background-repeat: repeat;
+  }
+
+  /* line 11, scss/_header.scss */
+  .top_bar {
+    height: 60px;
+    width: 100%;
+    background-color: #008cba;
+  }
+  /* line 17, scss/_header.scss */
+  .top_bar .mobile_menu {
+    display: none;
+  }
+  /* line 22, scss/_header.scss */
+  .top_bar .logo {
+    width: 240px;
+    position: relative;
+    margin: 0 0;
+    padding: 0 20px;
+  }
+  /* line 28, scss/_header.scss */
+  .top_bar .logo a {
+    margin: 0 40.5px;
+  }
+
+  /* line 2, scss/_content.scss */
+  .container {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+    bottom: 0px;
+    margin: 0 0;
+  }
+  /* line 12, scss/_content.scss */
+  .container .drawer {
+    -webkit-transition: margin-left 400ms;
+    -moz-transition: margin-left 400ms;
+    -o-transition: margin-left 400ms;
+    transition: margin-left 400ms;
+    width: 300px;
+    background-color: #053040;
+    float: left;
+    height: 100%;
+    overflow: auto;
+  }
+  /* line 22, scss/_content.scss */
+  .container .drawer .drawer_scroller {
+    width: 100%;
+    position: relative;
+    padding-top: 76px;
+  }
+  /* line 27, scss/_content.scss */
+  .container .drawer .drawer_scroller #page_top {
+    -webkit-transition: background-color 400ms;
+    -moz-transition: background-color 400ms;
+    -o-transition: background-color 400ms;
+    transition: background-color 400ms;
+    -webkit-transition: border-color 400ms;
+    -moz-transition: border-color 400ms;
+    -o-transition: border-color 400ms;
+    transition: border-color 400ms;
+    background-color: #042937;
+    margin: 0px 0px;
+    padding: 15px 10px;
+    color: #FFF;
+    font-size: 12pt;
+    cursor: pointer;
+    border: 2px solid #042937;
+    border-left: 2px solid #0084b0;
+    height: 45px;
+    width: 261px;
+    position: fixed;
+    top: 60px;
+  }
+  /* line 43, scss/_content.scss */
+  .container .drawer .drawer_scroller #page_top img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 12px;
+    background-color: #003f54;
+  }
+  /* line 53, scss/_content.scss */
+  .container .drawer .drawer_scroller #page_top div {
+    margin-top: 15px;
+    font-size: 11pt;
+    padding-left: 55px;
+  }
+  /* line 62, scss/_content.scss */
+  .container .drawer .drawer_scroller #page_top:hover {
+    background-color: #0084b0;
+    border: 2px solid #0084b0;
+  }
+  /* line 70, scss/_content.scss */
+  .container .content {
+    -webkit-transition: opacity 400ms;
+    -moz-transition: opacity 400ms;
+    -o-transition: opacity 400ms;
+    transition: opacity 400ms;
+    width: 700px;
+    float: left;
+    height: 100%;
+    overflow: auto;
+  }
+  /* line 79, scss/_content.scss */
+  .container .content .content_scroller {
+    width: 100%;
+  }
+
+  /* line 2, scss/_blogpost.scss */
+  .bpost {
+    max-width: 1000px;
+    width: 85%;
+    background-color: #FFF;
+    border: 15px solid #dedede;
+    margin: 10px auto;
+    padding: 15px 15px;
+  }
+  /* line 11, scss/_blogpost.scss */
+  .bpost .bpostInfo {
+    width: 100%;
+    border-bottom: 1px solid #dedede;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+  /* line 18, scss/_blogpost.scss */
+  .bpost .bpostInfo .bpostAvatar {
+    float: left;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  /* line 27, scss/_blogpost.scss */
+  .bpost .bpostInfo .bpostTitle {
+    font-size: 18pt;
+    margin-bottom: 0px;
+    padding-top: 7px;
+    color: #008cba;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  /* line 39, scss/_blogpost.scss */
+  .bpost .bpostInfo .bpostName {
+    font-size: 8pt;
+  }
+  /* line 44, scss/_blogpost.scss */
+  .bpost .bpostInfo .bpostDate {
+    font-size: 8pt;
+  }
+  /* line 52, scss/_blogpost.scss */
+  .bpost .bpostContent h1, .bpost .bpostContent h2 {
+    font-size: 18pt;
+    margin-top: 0px;
+    padding: 0 0;
+    color: #008cba;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 8px;
+  }
+  /* line 62, scss/_blogpost.scss */
+  .bpost .bpostContent h2 {
+    font-size: 16pt;
+  }
+  /* line 66, scss/_blogpost.scss */
+  .bpost .bpostContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  /* line 72, scss/_blogpost.scss */
+  .bpost .bpostContent ul > li {
+    padding-left: 1em;
+    text-indent: -.7em;
+  }
+  /* line 77, scss/_blogpost.scss */
+  .bpost .bpostContent ul > li:before {
+    content: "■ ";
+    padding-right: 6px;
+    color: #008cba;
+    /* or whatever color you prefer */
+  }
+  /* line 84, scss/_blogpost.scss */
+  .bpost .bpostContent a {
+    color: #008cba;
+    text-decoration: none;
+  }
+  /* line 90, scss/_blogpost.scss */
+  .bpost .bpostContent a:hover {
+    color: #006687;
+  }
+  /* line 95, scss/_blogpost.scss */
+  .bpost .bpostContent a:visited {
+    color: #00526e;
+  }
+  /* line 101, scss/_blogpost.scss */
+  .bpost .bpostImage {
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dedede;
+  }
+>>>>>>> 0e44cdb7f7463576bfe59bb4d9f89696aeb1a5b2
 }
-/* line 103, scss/_blogpost.scss */
-.bpost .bpostImage {
-  width: 100%;
-  padding-bottom: 15px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #dedede;
+@media screen and (max-width: 700px) {
+  /* line 2, scss/_header.mobile.scss */
+  body {
+    margin: 0 0;
+    padding: 0 0;
+    font-family: "rooney-sans", sans-serif;
+    background-image: url(/assets/images/halftone.png);
+    background-repeat: repeat;
+  }
+
+  /* line 11, scss/_header.mobile.scss */
+  .top_bar {
+    height: 60px;
+    width: 100%;
+    background-color: #008cba;
+  }
+  /* line 17, scss/_header.mobile.scss */
+  .top_bar .mobile_menu {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    opacity: 0.85;
+  }
+  /* line 25, scss/_header.mobile.scss */
+  .top_bar .logo {
+    width: 120px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  /* line 2, scss/_content.mobile.scss */
+  .container {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+    bottom: 0px;
+    overflow: hidden;
+    margin: 0 0;
+  }
+  /* line 11, scss/_content.mobile.scss */
+  .container .drawer {
+    -webkit-transition: margin-left 400ms;
+    -moz-transition: margin-left 400ms;
+    -o-transition: margin-left 400ms;
+    transition: margin-left 400ms;
+    width: 300px;
+    background-color: #053040;
+    float: left;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    overflow: auto;
+  }
+  /* line 22, scss/_content.mobile.scss */
+  .container .drawer .drawer_scroller {
+    width: 100%;
+    padding-top: 76px;
+  }
+  /* line 26, scss/_content.mobile.scss */
+  .container .drawer .drawer_scroller #page_top {
+    -webkit-transition: background-color 400ms;
+    -moz-transition: background-color 400ms;
+    -o-transition: background-color 400ms;
+    transition: background-color 400ms;
+    -webkit-transition: border-color 400ms;
+    -moz-transition: border-color 400ms;
+    -o-transition: border-color 400ms;
+    transition: border-color 400ms;
+    background-color: #042532;
+    margin: 0px 0px;
+    padding: 15px 10px;
+    color: #FFF;
+    font-size: 12pt;
+    cursor: pointer;
+    border: 2px solid #042937;
+    border-left: 2px solid #0084b0;
+    height: 45px;
+    width: 300px;
+    position: fixed;
+    top: 60px;
+  }
+  /* line 42, scss/_content.mobile.scss */
+  .container .drawer .drawer_scroller #page_top img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 12px;
+    background-color: #003f54;
+  }
+  /* line 52, scss/_content.mobile.scss */
+  .container .drawer .drawer_scroller #page_top div {
+    margin-top: 15px;
+    font-size: 11pt;
+    padding-left: 55px;
+  }
+  /* line 60, scss/_content.mobile.scss */
+  .container .drawer .drawer_scroller #page_top:active {
+    background-color: #0084b0;
+    border: 2px solid #0084b0;
+  }
+  /* line 68, scss/_content.mobile.scss */
+  .container .drawer_show {
+    margin-left: 0px;
+  }
+  /* line 73, scss/_content.mobile.scss */
+  .container .drawer_hidden {
+    margin-left: -300px;
+  }
+  /* line 78, scss/_content.mobile.scss */
+  .container .content {
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    overflow: auto;
+    z-index: 9;
+  }
+  /* line 85, scss/_content.mobile.scss */
+  .container .content .content_scroller {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* line 2, scss/_blogpost.mobile.scss */
+  .bpost {
+    max-width: 1000px;
+    width: 80%;
+    background-color: #FFF;
+    border: 15px solid #dedede;
+    margin: 10px auto;
+    padding: 15px 15px;
+  }
+  /* line 11, scss/_blogpost.mobile.scss */
+  .bpost .bpostInfo {
+    width: 100%;
+    border-bottom: 1px solid #dedede;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+  /* line 18, scss/_blogpost.mobile.scss */
+  .bpost .bpostInfo .bpostAvatar {
+    float: left;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  /* line 27, scss/_blogpost.mobile.scss */
+  .bpost .bpostInfo .bpostTitle {
+    font-size: 15pt;
+    margin-bottom: 0px;
+    padding-top: 7px;
+    color: #008cba;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  /* line 39, scss/_blogpost.mobile.scss */
+  .bpost .bpostInfo .bpostName {
+    font-size: 8pt;
+  }
+  /* line 44, scss/_blogpost.mobile.scss */
+  .bpost .bpostInfo .bpostDate {
+    font-size: 8pt;
+  }
+  /* line 50, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent {
+    font-size: 10pt;
+  }
+  /* line 53, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent h1, .bpost .bpostContent h2 {
+    font-size: 15pt;
+    margin-top: 0px;
+    padding: 0 0;
+    color: #008cba;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 8px;
+  }
+  /* line 63, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent h2 {
+    font-size: 14pt;
+  }
+  /* line 67, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  /* line 73, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent ul > li {
+    padding-left: 1em;
+    text-indent: -.7em;
+  }
+  /* line 78, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent ul > li:before {
+    content: "■ ";
+    padding-right: 6px;
+    color: #008cba;
+    /* or whatever color you prefer */
+  }
+  /* line 85, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent a {
+    color: #008cba;
+    text-decoration: none;
+  }
+  /* line 91, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent a:hover {
+    color: #006687;
+  }
+  /* line 96, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent a:visited {
+    color: #00526e;
+  }
+  /* line 102, scss/_blogpost.mobile.scss */
+  .bpost .bpostImage {
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dedede;
+  }
 }
