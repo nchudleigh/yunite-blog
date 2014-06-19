@@ -44,10 +44,20 @@ $default-transition-delay    : false;
 			line-height: 1.25;
 		}
 }
-
-.card:hover
+@media screen and (max-width: $mobileTransition)
 {
-	background-color: darken($yunite-lblue,5%);
+	.card:active
+	{
+		background-color: darken($yunite-lblue,5%);
+	}
+}
+
+@media screen and (min-width: $mobileTransition)
+{
+	.card:hover
+	{
+		background-color: darken($yunite-lblue,5%);
+	}
 }
 
 .currentCard

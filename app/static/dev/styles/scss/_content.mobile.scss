@@ -14,53 +14,54 @@
 		background-color:$yunite-sidebar;
 		float:left;
 		height:100%;
-		position:absolute;
 		z-index:10;
-		overflow: auto;
+		overflow: scroll;
+		position:absolute;
+		#page_top
+		{
+			@include single-transition(background-color); 
+			@include single-transition(border-color); 
+			background-color:darken($yunite-sidebar,3%);
+			margin:0px 0px;
+			padding: 15px 0px;
+			z-index:11;
+			color:#FFF;
+			font-size: 12pt;
+			cursor:pointer;
+			border:2px solid darken($yunite-sidebar,2%);
+			border-left:2px solid darken($yunite-lblue,2%);
+			height:45px;
+			//width:($drawerWidthMobile) - (17px);
+			width:100%;
+			position:fixed;
+			img
+			{
+				@include border-radius(50%);
+				width:45px;
+				height:45px;
+				position:absolute;
+				left: 12px;
+				background-color: darken($yunite-lblue,20%);
+			}
+
+			div
+			{
+				margin-top:15px;
+				font-size:11pt;
+				padding-left:65px;
+			}
+		}
+
+		#page_top:active
+		{
+			background-color:darken($yunite-lblue,2%);
+			border:2px solid darken($yunite-lblue,2%);
+		}
 
 		.drawer_scroller
 		{
-			width:100%;
-			padding-top:76px;
-			#page_top
-			{
-				@include single-transition(background-color); 
-				@include single-transition(border-color); 
-				background-color:darken($yunite-sidebar,3%);
-				margin:0px 0px;
-				padding: 15px 10px;
-				color:#FFF;
-				font-size: 12pt;
-				cursor:pointer;
-				border:2px solid darken($yunite-sidebar,2%);
-				border-left:2px solid darken($yunite-lblue,2%);
-				height:45px;
-				width:($drawerWidthMobile) - (0px);
-				position:fixed;
-				top:60px;
-				img
-				{
-					@include border-radius(50%);
-					width:45px;
-					height:45px;
-					position:absolute;
-					left: 12px;
-					background-color: darken($yunite-lblue,20%);
-				}
-
-				div
-				{
-					margin-top:15px;
-					font-size:11pt;
-					padding-left:55px;
-				}
-			}
-
-			#page_top:active
-			{
-				background-color:darken($yunite-lblue,2%);
-				border:2px solid darken($yunite-lblue,2%);
-			}
+			width:inherit;
+			margin-top:77px;
 		}
 	}
 
