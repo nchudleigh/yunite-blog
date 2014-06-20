@@ -4,6 +4,9 @@
                     <img src="/assets/images/yunite-logo.png" height="60" width="119" alt="">
                 </a>
             </span>
+            <div class="registerBtn showRegistrationButton" data-ng-show="!showRegistration">
+                <input type="button" value="Register" data-ng-click="showRegistration=true" class="form-control registerBtn">
+            </div>
             <div class="pull-right loginForm">
                 <form ng-controller="loginController">
                     <input type="text" ng-model="user.email" class="form-control loginFormIn" placeholder="Email">
@@ -15,7 +18,7 @@
 
         <div ng-controller="loginController">
             
-            <div role="form" class="marginTop">
+            <div role="form" class="marginTop" ng-hide="!showRegistration">
                 <form class="loveYouJon">
                     <label>Register</label>
                     <input type="text" ng-model="user.first_name" class="form-control" placeholder="First name">

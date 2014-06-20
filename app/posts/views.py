@@ -11,7 +11,7 @@ import json
 @posts.route('/api/posts/all')
 def all_posts():
 
-    all_posts = Post.query.all()
+    all_posts = Post.query.order_by('-pub_date')
     posts = PostSerializer(all_posts, many=True).json
 
     return jsonify({

@@ -44,3 +44,9 @@
 .marginTop{
 	margin-top:100px;
 }
+
+.registerBtn{
+	width: 100px !important;
+	margin: auto !important;
+	display: inline-block;
+}
