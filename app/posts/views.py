@@ -85,7 +85,7 @@ def create_post():
 @posts.route('/manage/delete_post/<int:post_id>', methods=['GET'])
 @login_required
 def delete_post(post_id):
-
+    print(post_id);
     try:
         post=Post.query.get(id=post_id, author=current_user)
         db.session.delete(post)
