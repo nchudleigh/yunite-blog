@@ -87,7 +87,7 @@ def create_post():
 def delete_post(post_id):
     print(post_id);
     try:
-        post=Post.query.get(id=post_id, author=current_user)
+        post=Post.query.get(id=post_id, author_id=current_user.id)
         db.session.delete(post)
         db.session.commit()
 
