@@ -15,7 +15,8 @@
 		float:left;
 		height:100%;
 		z-index:10;
-		overflow: scroll;
+		overflow-y: scroll;
+		overflow-x:hidden;
 		position:absolute;
 		#page_top
 		{
@@ -31,8 +32,8 @@
 			border:2px solid darken($yunite-sidebar,2%);
 			border-left:2px solid darken($yunite-lblue,2%);
 			height:45px;
-			//width:($drawerWidthMobile) - (17px);
-			width:100%;
+			width:($drawerWidthMobile) - (17px);
+			//width:100%;
 			position:fixed;
 			img
 			{
