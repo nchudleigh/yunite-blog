@@ -47,9 +47,23 @@ def edit_user():
         }),200
 
 
+@users.route('/manage/me',methods=['POST'])
+@login_required
+def me():
 
+    user=UserSerializer(current_user).json
 
-@users.route('/api/users/<int:user_id>', methods=['GET'])
+    return jsonify({
+        'status': 200,
+        'error': None,
+        'result':{
+            'data':user,
+            'message':'Success returning your profile'
+            }
+        }),200
+
+@users.route('/manage/get_user/<int:user_id>', methods=['GET'])
+@login_required
 def get_user(user_id):
 
     user = UserSerializer(User.query.get(id=user_id)).json
