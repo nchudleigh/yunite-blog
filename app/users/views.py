@@ -10,6 +10,45 @@ from datetime import datetime
 
 admin_pass='l0nGh4rDWh4l3w1LLy'
 
+@users.route('/manage/edit_user', methods=['POST'])
+@login_required
+def edit_user():
+
+    data = json.loads(request.data)
+    user = User.query.get(id=current_user.id)
+
+    first_name=data.get('first_name')
+    last_name=data.get('last_name')
+    email=data.get('email')
+    img=data.get('img')
+
+    if None in (first_name, last_name, email, img):
+        return jsonify({
+            'status': 400,
+            'error': 'A field was empty!',
+            'result': {
+                'message': 'A field was empty!'
+            }
+        }),400
+
+    user.first_name=first_name
+    user.last_name=last_name
+    user.email=email
+    user.img=img
+
+    db.session.commit()
+
+    return jsonify({
+        'status': 200,
+        'error': None,
+        'result':{
+            'message':'Success changing user info'
+            }
+        }),200
+
+
+
+
 @users.route('/api/users/<int:user_id>', methods=['GET'])
 def get_user():
 

@@ -133,6 +133,7 @@ def edit_post():
         }), 400
 
     post.body=body
+    db.session.commit()
 
     return jsonify({
             'status': 200,
