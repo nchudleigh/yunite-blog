@@ -81,7 +81,7 @@ def create_post():
 
 
 
-@posts.route('/manage/delete_post/<int:post_id>', methods=['GET'])
+@posts.route('/manage/delete_post/<int:post_id>', methods=['POST'])
 @login_required
 def delete_post(post_id):
 
@@ -94,7 +94,7 @@ def delete_post(post_id):
             'result': {
                 'message': 'You are not the author of this post.'
             }
-        }), 404
+        }), 40
 
         db.session.delete(post)
         db.session.commit()
@@ -122,12 +122,21 @@ def delete_post(post_id):
 @login_required
 def edit_post(post_id):
     
-    data=json_loads(request.data)
+    data=json.loads(request.data)
     title=data.get('title')
     body=data.get('body')
     
     try:
-        post=Post.query.get(id=post_id, author=current_user)
+        post=Post.query.filter_by(id=post_id).first()
+        if not post.author == current_user:
+            return jsonify({
+            'status': 400,
+            'error': 'You are not the author of this post',
+            'result': {
+                'message': 'You are not the author of this post.'
+            }
+        }), 400
+
     except:
         return jsonify({
             'status': 400,
@@ -137,6 +146,7 @@ def edit_post(post_id):
             }
         }), 400
 
+    post.title=title
     post.body=body
     db.session.commit()
 

@@ -51,7 +51,7 @@
             };
     }]);
 
-    app.controller("editDeleteController",["$scope","getMyPosts","deleteMyPost",function($scope,getMyPosts,deleteMyPost){
+    app.controller("editDeleteController",["$scope","getMyPosts","deletePost","editPost",function($scope,getMyPosts,deletePost,editPost){
         $scope.getPosts = function()
         {
             getMyPosts().success(function(d){
@@ -60,10 +60,14 @@
             }).error();
         }
 
-         $scope.deletePost = function(post_id)
-        {
-               deleteMyPost(post_id).success($scope.getMyPosts); 
+        $scope.deletePost = function(post_id){
+            deletePost(post_id).success($scope.getPosts); 
         }
+
+        $scope.editPost=function(post_id){
+            editPost(post_id).success($scope.getPosts);
+        }
+
     }]);
 
     app.factory('getMyPosts', ['$http', function($http){
@@ -76,11 +80,21 @@
         }; 
     }]);
 
-    app.factory('deleteMyPost', ['$http', function($http){
+    app.factory('deletePost', ['$http', function($http){
         return function(idi){
             return $http({
-                method:'GET', 
+                method:'POST', 
                 url:'/manage/delete_post/'+idi,
+                headers:{'Content-Type':'application/json'}
+            })
+        }; 
+
+    }]);app.factory('editPost', ['$http', function($http){
+        return function(post){
+            return $http({
+                method:'POST', 
+                url:'/manage/edit_post/'+post.id,
+                data:post,
                 headers:{'Content-Type':'application/json'}
             })
         }; 
