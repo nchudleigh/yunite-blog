@@ -27,7 +27,7 @@ def all_posts():
 @login_required
 def my_posts():
 
-    my_posts = posts.query.filter_by(author=current_user)
+    my_posts = Post.query.filter_by(author=current_user)
     posts = PostSerializer(my_posts, many=True).json
     
     return jsonify({
