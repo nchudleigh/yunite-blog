@@ -8,7 +8,12 @@
         </div>
 
         <div ng-controller="manageController" >
-            <form role="form">
+            <div class="panel-nav">
+                <span class="panel-nav-item" ng-click="activePanel = 'add'" ng-class="{panelnavitemactive: activePanel =='add'}">New Post</span>
+                <span class="panel-nav-item" ng-click="activePanel = 'editdelete'" ng-class="{panelnavitemactive: activePanel =='editdelete'}">Edit/Delete Post</span>
+            </div>
+            <div class="manage-panel" panel-name="add" ng-hide="activePanel != 'add'">
+                <form role="form">
                 <div>
                     <div>
                         <input type="title" class="form-control titleField" ng-model="post.title" placeholder="Title" >
@@ -20,11 +25,46 @@
                         <input type="button" ng-click="createPost()" value="Post" class="btn btn-default submitButton">
                     </div>
                 </div>
-            </form>
-            <div class="bpost">
+                </form><br>
+                <div class="previewTitle">Preview</div>
+                <div class="bpost">
+                    <div class="bpostInfo">
+                        <img ng-src="http://i.imgur.com/7pBHzOW.png?1" title="Benjamin" width="60" height="60" class="bpostAvatar">
+                        <div class="bpostInfoRight">
+                            <div class="bpostTitle" ng-bind="post.title"></div>
+                            <span class="bpostName ng-binding">Yunite&nbsp;User,</span>
+                            <span class="bpostDate ng-binding">Jun 20, 1969 @ 11:11 AM</span>
+                        </div>
+                    </div>
+                    <div data-ng-bind-html="post.body | unsafe" class="bpostContent"></div>
+                </div>
+            </div>
+           
+            <div class="manage-panel" panel-name="editdelete" ng-hide="activePanel != 'editdelete'">
+                <div ng-controller="editDeleteController" ng-init="getPosts()">
+                     <div ng-repeat="post in myPosts" class="bpost" ng-class="{bpostEdit: !post.show}">
+                        <div class="bpostInfo">
+                            <div class="bpostControls">
+                                <div class="bpostDelete" ng-click="deletePost(post.id)">
+                                <div class="button"><div class="x">X</div></div>
+                                <span class="text">Delete</span>
+                            </div>
 
-                <div data-ng-bind-html="post.body | unsafe" class="bpostContent">
-
+                            <div class="bpostEditb"  ng-click="post.show = !post.show">
+                                <div class="button"><div class="x">&#9998;</div></div>
+                                <span class="text">Edit</span>
+                            </div>
+                        </div>
+                            
+                        <img ng-src="http://i.imgur.com/7pBHzOW.png?1" title="Benjamin" width="60" height="60" class="bpostAvatar">
+                        <div class="bpostInfoRight">
+                            <div class="bpostTitle" ng-bind="post.title"></div>
+                            <span class="bpostName ng-binding">Yunite&nbsp;User,</span>
+                            <span class="bpostDate ng-binding">Jun 20, 1969 @ 11:11 AM</span>
+                        </div>
+                    </div>
+                    <div data-ng-bind-html="post.body | unsafe" class="bpostContent" ng-hide="!post.show"></div>
+                     </div>
                 </div>
             </div>
 </div>

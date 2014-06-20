@@ -1,52 +1,201 @@
-.titleField{
-	margin: 10px;
-	width: 80% !important;
-	max-width: 800px;
+/* line 50, scss/manage.scss */
+.submitButton {
+  margin-top: 15px;
+  width: 200px;
 }
 
-.postField{
-	width: 90% !important;
-	margin: 10px;
-}
-.submitButton{
-	margin-left: 15px;
+/* line 55, scss/manage.scss */
+.logoutBtn {
+  margin: 10px;
 }
 
-.logoutBtn{
-	margin:10px;
+/* line 59, scss/manage.scss */
+.custForm {
+  width: 100px;
 }
 
-.custForm{
-	width: 100px;
+/* line 64, scss/manage.scss */
+.loginForm {
+  width: 500px;
+  margin-top: 12px;
 }
 
-.loginForm
-{
-	width:500px;
-	margin-top:12px;
+/* line 70, scss/manage.scss */
+.loginFormIn {
+  width: 200px !important;
+  display: inline-block !important;
+  margin: 0px 5px;
 }
 
-.loginFormIn
-{
-	width:200px !important;
-	display: inline-block !important;
-	margin: 0px 5px;
+/* line 76, scss/manage.scss */
+.loveYouJon {
+  width: 200px;
+  margin: auto;
 }
 
-.loveYouJon{
-	width:200px;
-	margin:auto;
+/* line 81, scss/manage.scss */
+.loveYouJon input {
+  margin: 5px;
 }
 
-.loveYouJon input{
-	margin:5px;
-}
-.marginTop{
-	margin-top:100px;
+/* line 84, scss/manage.scss */
+.marginTop {
+  margin-top: 100px;
 }
 
-.registerBtn{
-	width: 100px !important;
-	margin: auto !important;
-	display: inline-block;
+/* line 88, scss/manage.scss */
+.registerBtn {
+  width: 100px !important;
+  margin: auto !important;
+  display: inline-block;
+}
+
+/* line 96, scss/manage.scss */
+.manage-panel {
+  max-width: 1200px;
+  width: 90%;
+  background-color: #FFF;
+  border: 15px solid #dedede;
+  margin: 10px auto;
+  padding: 20px 20px;
+}
+/* line 105, scss/manage.scss */
+.manage-panel .ta-toolbar {
+  margin: 15px auto;
+}
+
+/* line 111, scss/manage.scss */
+.previewTitle {
+  text-align: center;
+  font-size: 14pt;
+  color: #008cba;
+}
+
+/* line 118, scss/manage.scss */
+.panel-nav {
+  padding: 10px 0px;
+  background-color: #FFF;
+  text-align: center;
+  border-bottom: 1px solid #BDBDBD;
+}
+/* line 120, scss/manage.scss */
+.panel-nav .panel-nav-item {
+  width: 150px;
+  text-align: center;
+  font-size: 13pt;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  padding: 4px 10px;
+  margin: 10px 5px;
+  background-color: #dedede;
+  cursor: pointer;
+}
+/* line 132, scss/manage.scss */
+.panel-nav .panel-nav-item:hover {
+  background-color: #d1d1d1;
+}
+/* line 137, scss/manage.scss */
+.panel-nav .panel-nav-item:active, .panel-nav .panelnavitemactive {
+  background-color: #b8b8b8;
+}
+
+/* line 150, scss/manage.scss */
+.bpostEdit .bpostInfo {
+  border: none;
+  padding: 0 0;
+  margin: 0 0;
+}
+
+/* line 158, scss/manage.scss */
+.bpostControls {
+  float: right;
+  width: 300px;
+  padding-top: 20px;
+  position: relative;
+  padding-right: 10px;
+}
+/* line 169, scss/manage.scss */
+.bpostControls .bpostDelete, .bpostControls .bpostEditb {
+  height: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 0 0;
+  margin: 0 0;
+  position: relative;
+  overflow: hidden;
+  float: right;
+  cursor: pointer;
+}
+/* line 181, scss/manage.scss */
+.bpostControls .bpostDelete {
+  background-color: #ca3535;
+  width: 90px;
+  right: 0px;
+  color: #E9E9E9;
+}
+/* line 187, scss/manage.scss */
+.bpostControls .bpostDelete .text {
+  position: absolute;
+  display: inline-block;
+  bottom: 4.5px;
+  left: 35px;
+}
+/* line 195, scss/manage.scss */
+.bpostControls .bpostDelete .button {
+  background-color: #a22a2a;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  position: relative;
+}
+/* line 203, scss/manage.scss */
+.bpostControls .bpostDelete .button .x {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+/* line 212, scss/manage.scss */
+.bpostControls .bpostDelete:hover {
+  background-color: #d15151;
+}
+/* line 217, scss/manage.scss */
+.bpostControls .bpostEditb:hover {
+  background-color: #72de85;
+}
+/* line 222, scss/manage.scss */
+.bpostControls .bpostEditb {
+  background-color: #49d461;
+  width: 75px;
+  right: 10px;
+  color: #FFF;
+}
+/* line 228, scss/manage.scss */
+.bpostControls .bpostEditb .text {
+  position: absolute;
+  display: inline-block;
+  bottom: 4.5px;
+  left: 35px;
+}
+/* line 236, scss/manage.scss */
+.bpostControls .bpostEditb .button {
+  background-color: #239436;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  position: relative;
+}
+/* line 244, scss/manage.scss */
+.bpostControls .bpostEditb .button .x {
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  font-size: 13pt;
 }

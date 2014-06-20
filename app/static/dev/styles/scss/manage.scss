@@ -1,0 +1,256 @@
+// Variables
+
+$main-color: #00a89e; 
+$yunite-lblue-alt: #4481C4;
+$yunite-lblue: #008cba;
+$yunite-lblue-hover: #0078a0;
+$yunite-aqua: #65CECF;
+$yunite-green-alt: #83c444;
+$yunite-green: #88C84B;
+$yunite-sidebar: #053040;
+$yunite-green-hover: #689b39;
+$yunite-notification-yellow: #FFFFF2;
+$yunite-warning: #FFCC33;
+$yunite-warning-hover: darken($yunite-warning, 15%);
+$yunite-alert: #c60f13;
+$yunite-alert-hover: darken($yunite-alert, 10%);
+$yunite-like: #C375B0;
+$yunite-gold: #e4b727;
+$yunite-orange: #eb6420;
+
+$sans-serif: "rooney-sans", sans-serif;
+
+$mobileTransition: 700px;
+
+$panel-border: #DEDEDE;
+
+$drawerWidth: 300px;
+
+$drawerWidthMobile: 300px;
+// Mixins
+
+// Border Radius Mixin
+@mixin border-radius($value) {
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	border-radius: $value;
+}
+
+// Filter compile issues
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+.postField{
+}
+.submitButton{
+	margin-top:15px;
+	width:200px;
+}
+
+.logoutBtn{
+	margin:10px;
+}
+
+.custForm{
+	width: 100px;
+}
+
+.loginForm
+{
+	width:500px;
+	margin-top:12px;
+}
+
+.loginFormIn
+{
+	width:200px !important;
+	display: inline-block !important;
+	margin: 0px 5px;
+}
+
+.loveYouJon{
+	width:200px;
+	margin:auto;
+}
+
+.loveYouJon input{
+	margin:5px;
+}
+.marginTop{
+	margin-top:100px;
+}
+
+.registerBtn{
+	width: 100px !important;
+	margin: auto !important;
+	display: inline-block;
+}
+
+
+.manage-panel
+{
+	max-width: 1200px;
+	width:90%;
+	background-color: #FFF;
+	border:15px solid $panel-border;
+	margin: 10px auto;
+	padding: 20px 20px;
+
+	.ta-toolbar
+	{
+		margin:15px auto;
+	}
+}
+
+.previewTitle
+{
+	text-align:center;
+	font-size:14pt;
+	color:$yunite-lblue;
+}
+
+.panel-nav
+{
+	.panel-nav-item
+	{
+		width:150px;
+		text-align:center;
+		font-size:13pt;
+		@include border-radius(7px);
+		padding:4px 10px;
+		margin:10px 5px;
+		background-color:$panel-border;
+		cursor:pointer;
+	}
+
+	.panel-nav-item:hover
+	{
+		background-color:darken($panel-border,5%);
+	}
+
+	.panel-nav-item:active,.panelnavitemactive
+	{
+		background-color:darken($panel-border,15%);
+	}
+
+	padding:10px 0px;
+	background-color:#FFF;
+	text-align:center;
+	border-bottom:1px solid #BDBDBD;
+}
+
+.bpostEdit
+{
+	.bpostInfo
+	{
+		border:none;
+		padding:0 0;
+		margin: 0 0;
+	}
+}
+
+.bpostControls
+{
+	$deleteRed: #CA3535;
+	$editYellow: #49D461;
+
+	float:right;
+	width:300px;
+	padding-top:20px;
+	position:relative;
+	padding-right:10px;
+
+	.bpostDelete, .bpostEditb
+	{
+		height:30px;
+		@include border-radius(15px);
+		padding:0 0 ;
+		margin:0 0;
+		position:relative;
+		overflow:hidden;
+		float:right;
+		cursor:pointer;
+	}
+
+	.bpostDelete
+	{
+		background-color: $deleteRed;
+		width:90px;
+		right:0px;
+		color:#E9E9E9;
+		.text
+		{
+				position:absolute;
+				display: inline-block;
+				bottom:4.5px;
+				left:35px;
+		}
+
+		.button
+		{
+			background-color:darken($deleteRed,10%);
+			@include border-radius(15px);
+			display:inline-block;
+			width:30px;
+			height:100%;
+			position:relative;
+			.x
+			{
+				position:absolute;
+				top:5px;
+				left:10px;
+			}
+		}
+	}
+
+	.bpostDelete:hover
+	{
+		background-color:lighten($deleteRed,7%);
+	}
+
+	.bpostEditb:hover
+	{
+		background-color:lighten($editYellow,10%);
+	}
+
+	.bpostEditb
+	{
+		background-color: $editYellow;
+		width:75px;
+		right:10px;
+		color:#FFF;
+		.text
+		{
+				position:absolute;
+				display: inline-block;
+				bottom:4.5px;
+				left:35px;
+		}
+
+		.button
+		{
+			background-color:darken($editYellow,20%);
+			@include border-radius(15px);
+			display:inline-block;
+			width:30px;
+			height:100%;
+			position:relative;
+			.x
+			{
+				position:absolute;
+				top:4px;
+				left:7px;
+				font-size:13pt;
+
+			}
+		}
+	}
+}
+
+
+

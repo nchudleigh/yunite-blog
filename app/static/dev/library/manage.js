@@ -24,6 +24,8 @@
     });
 
     app.controller('manageController', ['$http','$scope','createPost','logout', function($http,$scope,createPost,logout){
+        $scope.activePanel = 'add';
+
         $scope.createPost=function(){
             createPost($scope.post).success($scope.createSuccess).error($scope.createFailure);
             }
@@ -47,11 +49,45 @@
         $scope.logoutFailure = function(){
                 console.log(data);
             };
-    }])
+    }]);
+
+    app.controller("editDeleteController",["$scope","getMyPosts","deleteMyPost",function($scope,getMyPosts,deleteMyPost){
+        $scope.getPosts = function()
+        {
+            getMyPosts().success(function(d){
+                $scope.myPosts = eval(eval(d).result.data);
+                console.log($scope.myPosts[0]);
+            }).error();
+        }
+
+         $scope.deletePost = function(post_id)
+        {
+               deleteMyPost(post_id).success($scope.getMyPosts); 
+        }
+    }]);
+
+    app.factory('getMyPosts', ['$http', function($http){
+        return function(){
+            return $http({
+                method:'GET', 
+                url:'/manage/my_posts',
+                headers:{'Content-Type':'application/json'}
+            })
+        }; 
+    }]);
+
+    app.factory('deleteMyPost', ['$http', function($http){
+        return function(idi){
+            return $http({
+                method:'GET', 
+                url:'/manage/delete_post/'+idi,
+                headers:{'Content-Type':'application/json'}
+            })
+        }; 
+    }]);
 
     app.factory('createPost', ['$http', function($http){
         return function(post){
-            console.log(post)
             return $http({
                 method:'POST', 
                 url:'/manage/create_post',
@@ -72,9 +108,9 @@
     }]);
 
     app.filter('unsafe', function($sce) {
-    return function(val) {
-        return $sce.trustAsHtml(val);
-    };
+        return function(val) {
+            return $sce.trustAsHtml(val);
+        };
     });
 
 }(window, document, location, navigator, jQuery, angular, undefined));
