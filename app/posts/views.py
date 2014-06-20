@@ -43,7 +43,6 @@ def my_posts():
 @login_required
 def create_post():
 
-    print (request.data)
     data = json.loads(request.data)
     
     #data checking
@@ -85,20 +84,29 @@ def create_post():
 @posts.route('/manage/delete_post/<int:post_id>', methods=['GET'])
 @login_required
 def delete_post(post_id):
-    print(post_id);
+
     try:
-        post=Post.query.get(id=post_id, author_id=current_user.id)
+        post=Post.query.filter_by(id=post_id).first()
+        if not post.author == current_user:
+            return jsonify({
+            'status': 400,
+            'error': 'You are not the author of this post',
+            'result': {
+                'message': 'You are not the author of this post.'
+            }
+        }), 404
+
         db.session.delete(post)
         db.session.commit()
 
     except:
         return jsonify({
-            'status': 400,
+            'status': 404,
             'error': 'No post found',
             'result': {
                 'message': 'No post found.'
             }
-        }), 400
+        }), 404
 
     return jsonify({
         'status': 200,
@@ -112,10 +120,9 @@ def delete_post(post_id):
 
 @posts.route('/manage/edit_post/<int:post_id>', methods=['POST'])
 @login_required
-def edit_post():
+def edit_post(post_id):
     
     data=json_loads(request.data)
-    post_id=request.args.get('post_id')
     title=data.get('title')
     body=data.get('body')
     

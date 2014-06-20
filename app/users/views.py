@@ -50,9 +50,8 @@ def edit_user():
 
 
 @users.route('/api/users/<int:user_id>', methods=['GET'])
-def get_user():
+def get_user(user_id):
 
-    user_id = request.args.get('user_id')
     user = UserSerializer(User.query.get(id=user_id)).json
 
     return jsonify({
