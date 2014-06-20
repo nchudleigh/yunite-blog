@@ -23,7 +23,7 @@ def all_posts():
             }
         }),200
 
-@posts.route('/api/posts/my_posts')
+@posts.route('/manage/my_posts')
 @login_required
 def my_posts():
 
