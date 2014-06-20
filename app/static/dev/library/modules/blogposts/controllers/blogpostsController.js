@@ -12,10 +12,15 @@
         {
           var currentWidth = window.innerWidth - $(".drawer").width();
           $(".content").width(currentWidth);
+
+          $("#page_top").css("width",$(".drawer").width()-19+"px");
           $scope.activePost();
         }else{
           $(".content").css("width","100%");
+
+          $("#page_top").css("width",$(".drawer").width()-5+"px");
         }
+
       }
 
       $scope.updatePosts = function(data){

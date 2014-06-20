@@ -16,7 +16,8 @@
 		float:left;
 		height:100%;
 		
-		overflow: scroll;
+		overflow-y: scroll;
+		overflow-x:hidden;
 
 		#page_top
 		{
@@ -24,14 +25,14 @@
 			@include single-transition(border-color); 
 			background-color:darken($yunite-sidebar,2%);
 			margin:0px 0px;
-			padding: 15px 10px;
+			padding: 15px 0px;
 			color:#FFF;
 			font-size: 12pt;
 			cursor:pointer;
 			border:2px solid darken($yunite-sidebar,2%);
 			border-left:2px solid darken($yunite-lblue,2%);
 			height:45px;
-			width:($drawerWidth) - (37px);
+			width:($drawerWidth) - (39px);
 			position:fixed;
 			z-index:11;
 			top:60px;

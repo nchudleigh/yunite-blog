@@ -1,12 +1,11 @@
 <div class="bpost" post_id="{{post.id}}">
 	<div class="bpostInfo">
-		<img src="assets/avatars/ben.jpg" alt="" width="60" height="60" class="bpostAvatar">
+		<img src="{{post.author.img}}" title="{{post.author.first_name}}" width="60" height="60" class="bpostAvatar">
 		<div class="bpostInfoRight">
 			<div class="bpostTitle">{{post.title}}</div>
-			<span class="bpostName">{{post.author}}</span>,
+			<span class="bpostName">{{post.author.first_name}}&nbsp;{{post.author.last_name}}</span>&nbsp;on&nbsp;
 			<span class="bpostDate">{{post.pub_date | date:'MMM dd, yyyy @ h:mm a'}}</span>
 		</div>
 	</div>
-	<img class="bpostImage" src="{{post.img}}" alt="">
 	<div class="bpostContent" ng-bind-html="post.body | unsafe"></div>
 </div>

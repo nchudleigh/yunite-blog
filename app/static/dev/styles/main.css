@@ -110,9 +110,10 @@
     background-color: #053040;
     float: left;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
-  /* line 22, scss/_content.scss */
+  /* line 23, scss/_content.scss */
   .container .drawer #page_top {
     -webkit-transition: background-color 400ms;
     -moz-transition: background-color 400ms;
@@ -124,19 +125,19 @@
     transition: border-color 400ms;
     background-color: #042937;
     margin: 0px 0px;
-    padding: 15px 10px;
+    padding: 15px 0px;
     color: #FFF;
     font-size: 12pt;
     cursor: pointer;
     border: 2px solid #042937;
     border-left: 2px solid #0084b0;
     height: 45px;
-    width: 263px;
+    width: 261px;
     position: fixed;
     z-index: 11;
     top: 60px;
   }
-  /* line 39, scss/_content.scss */
+  /* line 40, scss/_content.scss */
   .container .drawer #page_top img {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -147,24 +148,24 @@
     left: 12px;
     background-color: #003f54;
   }
-  /* line 49, scss/_content.scss */
+  /* line 50, scss/_content.scss */
   .container .drawer #page_top div {
     margin-top: 15px;
     font-size: 11pt;
     padding-left: 55px;
   }
-  /* line 57, scss/_content.scss */
+  /* line 58, scss/_content.scss */
   .container .drawer #page_top:hover {
     background-color: #0084b0;
     border: 2px solid #0084b0;
   }
-  /* line 63, scss/_content.scss */
+  /* line 64, scss/_content.scss */
   .container .drawer .drawer_scroller {
     width: 100%;
     position: relative;
     padding-top: 76px;
   }
-  /* line 72, scss/_content.scss */
+  /* line 73, scss/_content.scss */
   .container .content {
     -webkit-transition: opacity 400ms;
     -moz-transition: opacity 400ms;
@@ -177,7 +178,7 @@
     overflow: auto;
     right: 0px;
   }
-  /* line 81, scss/_content.scss */
+  /* line 82, scss/_content.scss */
   .container .content .content_scroller {
     width: 100%;
   }
@@ -330,10 +331,11 @@
     float: left;
     height: 100%;
     z-index: 10;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     position: absolute;
   }
-  /* line 21, scss/_content.mobile.scss */
+  /* line 22, scss/_content.mobile.scss */
   .container .drawer #page_top {
     -webkit-transition: background-color 400ms;
     -moz-transition: background-color 400ms;
@@ -353,10 +355,10 @@
     border: 2px solid #042937;
     border-left: 2px solid #0084b0;
     height: 45px;
-    width: 100%;
+    width: 283px;
     position: fixed;
   }
-  /* line 38, scss/_content.mobile.scss */
+  /* line 39, scss/_content.mobile.scss */
   .container .drawer #page_top img {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -367,31 +369,31 @@
     left: 12px;
     background-color: #003f54;
   }
-  /* line 48, scss/_content.mobile.scss */
+  /* line 49, scss/_content.mobile.scss */
   .container .drawer #page_top div {
     margin-top: 15px;
     font-size: 11pt;
     padding-left: 65px;
   }
-  /* line 56, scss/_content.mobile.scss */
+  /* line 57, scss/_content.mobile.scss */
   .container .drawer #page_top:active {
     background-color: #0084b0;
     border: 2px solid #0084b0;
   }
-  /* line 62, scss/_content.mobile.scss */
+  /* line 63, scss/_content.mobile.scss */
   .container .drawer .drawer_scroller {
     width: inherit;
     margin-top: 77px;
   }
-  /* line 69, scss/_content.mobile.scss */
+  /* line 70, scss/_content.mobile.scss */
   .container .drawer_show {
     margin-left: 0px;
   }
-  /* line 74, scss/_content.mobile.scss */
+  /* line 75, scss/_content.mobile.scss */
   .container .drawer_hidden {
     margin-left: -300px;
   }
-  /* line 79, scss/_content.mobile.scss */
+  /* line 80, scss/_content.mobile.scss */
   .container .content {
     height: 100%;
     position: absolute;
@@ -399,7 +401,7 @@
     overflow: auto;
     z-index: 9;
   }
-  /* line 86, scss/_content.mobile.scss */
+  /* line 87, scss/_content.mobile.scss */
   .container .content .content_scroller {
     width: 100%;
     margin: 0 auto;
