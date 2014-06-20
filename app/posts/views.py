@@ -82,7 +82,7 @@ def create_post():
 
 
 
-@posts.route('/manage/delete_post/<int:post_id>', methods=['POST'])
+@posts.route('/manage/delete_post/<int:post_id>', methods=['GET'])
 @login_required
 def delete_post():
 
