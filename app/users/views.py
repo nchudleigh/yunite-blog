@@ -11,8 +11,9 @@ from datetime import datetime
 admin_pass='l0nGh4rDWh4l3w1LLy'
 
 @users.route('/api/users/<int:user_id>', methods=['GET'])
-def get_user(user_id):
+def get_user():
 
+    user_id = request.args.get('user_id')
     user = UserSerializer(User.query.get(id=user_id)).json
 
     return jsonify({

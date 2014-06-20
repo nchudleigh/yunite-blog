@@ -82,13 +82,14 @@ def create_post():
 
 
 
-@posts.route('/manage/delete_post', methods=['POST'])
+@posts.route('/manage/delete_post/<int:post_id>', methods=['POST'])
 @login_required
 def delete_post():
 
-    try :
-        f_post=request.data.get('post_id')
-        post=Post.query.get(id=f_post)
+    post_id=request.args.get('post_id')
+
+    try:
+        post=Post.query.get(id=post_id, author=current_user)
         db.session.delete(post)
         db.session.commit()
 
@@ -109,3 +110,34 @@ def delete_post():
             }
         }),200
 
+
+
+@posts.route('/manage/edit_post/<int:post_id>', methods=['POST'])
+@login_required
+def edit_post():
+    
+    data=json_loads(request.data)
+    post_id=request.args.get('post_id')
+    title=data.get('title')
+    body=data.get('body')
+    
+    try:
+        post=Post.query.get(id=post_id, author=current_user)
+    except:
+        return jsonify({
+            'status': 400,
+            'error': 'No post found',
+            'result': {
+                'message': 'No post found.'
+            }
+        }), 400
+
+    post.body=body
+
+    return jsonify({
+            'status': 200,
+            'error': None,
+            'result':{
+                'message':'Post edited!'
+                }
+            }),200
