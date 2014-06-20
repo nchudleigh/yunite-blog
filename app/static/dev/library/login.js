@@ -19,23 +19,48 @@
         $translateProvider.preferredLanguage('en');
         $logProvider.debugEnabled(true);
         growlProvider.globalTimeToLive(5000);
-    
     });
 
-    app.controller('loginController', ["$http","$scope","loginValidate",function($http,$scope,loginValidate){
+    app.controller('loginController', ["$http","$scope","loginValidate","createUser",function($http,$scope,loginValidate,createUser){
+        
         $scope.checkForm=function(){
             loginValidate($scope.user).success($scope.loginSuccess).error($scope.loginFailure);
         };
 
         $scope.loginSuccess = function(data){
-                document.location='/manage'
-            };
+            document.location='/manage'
+        };
 
-            $scope.loginFailure = function(data){
-                console.log(data)
-            };
+        $scope.loginFailure = function(data){
+            console.log(data);
+        };
+
+        $scope.createUser=function(){
+            createUser($scope.user).success($scope.createSuccess).error($scope.createFailure);
+        };
+
+        $scope.createSuccess = function(data){
+            document.location='/manage'
+        };
+
+        $scope.createFailure = function(data){
+            console.log(data);
+        };
+
 
     }]);
+
+    app.factory('createUser', ['$http', function($http){
+        return function(user){
+            return $http({
+                method:'POST',
+                url:'manage/register',
+                data: JSON.stringify(user),
+                headers:{'Content-Type':'application/json'}
+            })
+        };
+    }]);
+
 
     app.factory('loginValidate', ['$http',function($http){
         return function(user){

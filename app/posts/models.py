@@ -1,14 +1,15 @@
 from app.users.models import User
-from datetime import datetime
+from time import time
 from app import db
 from marshmallow import Serializer, fields
+from app.users.models import UserSerializer
 
 class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
     body = db.Column(db.Text)
-    pub_date = db.Column(db.DateTime)
+    pub_date = db.Column(db.BigInteger)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     author = db.relationship('User',backref=db.backref('posts',lazy='dynamic'))
 
@@ -16,7 +17,7 @@ class Post(db.Model):
         self.title=title
         self.body=body
         if pub_date is None:
-            pub_date = datetime.utcnow()
+            pub_date = time()*1000
         self.pub_date = pub_date
         self.author = author
 
@@ -27,5 +28,5 @@ class PostSerializer(Serializer):
     id=fields.Integer()
     title=fields.String()
     body=fields.String()
-    pub_date=fields.DateTime()
-    author_id=fields.Integer()
+    pub_date=fields.Integer()
+    author=fields.Nested(UserSerializer)

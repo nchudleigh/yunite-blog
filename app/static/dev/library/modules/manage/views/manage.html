@@ -1,0 +1,30 @@
+<div class="top_bar" data-ng-controller="manageController">
+            <span class="logo">
+                <a>
+                    <img src="/assets/images/yunite-logo.png" height="60" width="119" alt="">
+                </a>
+            </span>
+            <a ng-click="logout()" class="btn btn-default logoutBtn pull-right">Logout</a>
+        </div>
+
+        <div ng-controller="manageController" >
+            <form role="form">
+                <div>
+                    <div>
+                        <input type="title" class="form-control titleField" ng-model="post.title" placeholder="Title" >
+                    </div>
+                    
+                    <div text-angular ng-model="post.body" class="postField"></div>
+
+                    <div>
+                        <input type="button" ng-click="createPost()" value="Post" class="btn btn-default submitButton">
+                    </div>
+                </div>
+            </form>
+            <div class="bpost">
+
+                <div data-ng-bind-html="post.body | unsafe" class="bpostContent">
+
+                </div>
+            </div>
+</div>

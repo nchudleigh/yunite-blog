@@ -6,6 +6,7 @@ from flask.ext.login import current_user, login_required
 from . import posts
 from .models import Post, PostSerializer
 from datetime import datetime
+import json
 
 @posts.route('/api/posts/all')
 def all_posts():

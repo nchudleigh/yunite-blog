@@ -34,40 +34,11 @@
         <!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
     </head>
     <body>
-    <div class="top_bar" data-ng-controller="manageController">
-            <span class="logo">
-                <a>
-                    <img src="/assets/images/yunite-logo.png" height="60" width="119" alt="">
-                </a>
-            </span>
-            <a ng-click="logout()" class="btn btn-default logoutBtn pull-right">Logout</a>
-        </div>
-
-        <div ng-controller="manageController" >
-            <form role="form">
-                <div>
-                    <div>
-                        <input type="title" class="form-control titleField" ng-model="post.title" placeholder="Title" >
-                    </div>
-                    
-                    <div text-angular ng-model="post.body" class="postField"  ></div>
-
-                    <div>
-                        <input type="button" ng-click="createPost()" value="Post" class="btn btn-default submitButton">
-                    </div>
-                </div>
-            </form>
-            <div class="bpost">
-
-                <div data-ng-bind-html="post.body | unsafe" class="bpostContent">
-
-                </div>
-            </div>
-        </div>
+        <ng-include src="'library/modules/manage/views/manage.html'"></ng-include>
 
         <script src="/components/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="/components/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-                <script src="/components/moment/moment.js" type="text/javascript"></script>
+        <script src="/components/moment/moment.js" type="text/javascript"></script>
         <script src="/components/select2/select2.js" type="text/javascript"></script>
         <script src="/components/iscroll/iscroll.js" type="text/javascript"></script>
         <script src="/components/angular/angular.min.js" type="text/javascript"></script>
