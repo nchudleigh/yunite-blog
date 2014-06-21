@@ -10,6 +10,7 @@
       , 'sharedData'
       , 'directive.blogpost'
       , 'directive.card'
+      , 'directive.sharebuttons'
       , 'blogposts'
       , 'sidebar'
       , 'topbar'
@@ -17,7 +18,7 @@
       , 'ngTouch'
     ])
     
-    .config(function($locationProvider,$routeProvider, $sceProvider, $urlRouterProvider, $logProvider, $translateProvider, growlProvider) {
+    .config(function($locationProvider,$routeProvider, $sceProvider, growlProvider) {
         //$locationProvider.html5Mode(true);
         $routeProvider
         .when('/', {
@@ -25,19 +26,18 @@
           controller : "sidebarController"
         }).when('/post/:id',{
           templateUrl: "library/modules/blogposts/views/blog.html",
-          controller : "sidebarController"
+          controller : "sidebarController",
+          reloadOnSearch : false
         }).otherwise({
           redirectTo: '/'
         } );
 
         $sceProvider.enabled(true);
                 
-        $translateProvider.preferredLanguage('en');
-        $logProvider.debugEnabled(true);
         growlProvider.globalTimeToLive(5000);
     
         //$rootScope.mobileTransition = 700;
-
+        //$location.path('/post/13').replace().notify(false);
     });
 
 }(window, document, location, navigator, jQuery, angular, undefined));

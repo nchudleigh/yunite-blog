@@ -66,6 +66,16 @@ $drawerWidthMobile: 300px;
 	margin-top:12px;
 }
 
+.goodLogin
+{
+	background-color:#8AFFA8 !important;
+}
+
+.badLogin
+{
+	background-color:#FFB2B2 !important;
+}
+
 .loginFormIn
 {
 	width:200px !important;
@@ -252,5 +262,35 @@ $drawerWidthMobile: 300px;
 	}
 }
 
+.ta-editor {
+    min-height: 500px;
+    height: auto;
 
+	div[contenteditable='true']
+	{
+		height:100%;
+	}
+}
+
+.editUser
+{
+	width:300px;
+	margin:0px auto!important;
+	margin-bottom: 10px !important;
+	.bpostAvatar
+	{
+		float:left;
+		width:60px;
+		height:60px;
+		@include border-radius(50%);
+		margin-right:20px;
+		margin-left:20px;
+	}
+
+	.field
+	{
+		width:100%;
+		margin:15px auto;
+	}
+}
 

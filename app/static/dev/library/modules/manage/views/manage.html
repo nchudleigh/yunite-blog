@@ -11,20 +11,35 @@
     <div class="panel-nav">
         <span class="panel-nav-item" ng-click="activePanel = 'add'" ng-class="{panelnavitemactive: activePanel =='add'}">New Post</span>
         <span class="panel-nav-item" ng-click="activePanel = 'editdelete'" ng-class="{panelnavitemactive: activePanel =='editdelete'}">Edit/Delete Post</span>
+        <span class="panel-nav-item" ng-click="activePanel = 'profile'" ng-class="{panelnavitemactive: activePanel =='profile'}">Edit My Profile</span>
     </div>
-    
-    <div class="manage-panel" panel-name="add" ng-hide="activePanel != 'add'">
-
-        <form role="form">
+    <div class="manage-panel" panel-name="add" ng-hide="activePanel != 'profile'">
+        <form role="form" ng-submit="editUser.send()" class="editUser">
             <div>
                 <div>
-                    <input type="title" class="form-control titleField" ng-model="post.title" placeholder="Title" >
+                    First Name: <br><input type="text" class="form-control field" ng-model="editUser.first_name" required>
+                    Last Name: <br><input type="text" class="form-control field" ng-model="editUser.last_name" required>
+                    Image URL: <br><input type="text" class="form-control field" ng-model="editUser.img" required>
+                    <img ng-src="{{editUser.img}}" title="" width="60" height="60" class="bpostAvatar">
+                </div>
+                <div>
+                    <input type="submit" value="Save Changes" class="btn btn-default submitButton">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="manage-panel" panel-name="add" ng-hide="activePanel != 'add'">
+
+        <form role="form" ng-submit="createPost()">
+            <div>
+                <div>
+                    <input type="title" class="form-control titleField" ng-model="post.title" placeholder="Title" required>
                 </div>
                 
-                <div text-angular ng-model="post.body" class="postField"></div>
+                <div text-angular ng-model="post.body" class="postField" required></div>
 
                 <div>
-                    <input type="button" ng-click="createPost()" value="Post" class="btn btn-default submitButton">
+                    <input type="submit" value="Post" class="btn btn-default submitButton">
                 </div>
             </div>
         </form><br>
@@ -32,11 +47,11 @@
         <div class="previewTitle">Preview</div>       
         <div class="bpost">
             <div class="bpostInfo">
-                <img ng-src="http://i.imgur.com/7pBHzOW.png?1" title="Benjamin" width="60" height="60" class="bpostAvatar">
+                <img ng-src="{{author.img}}" title="" width="60" height="60" class="bpostAvatar">
                 <div class="bpostInfoRight">
                     <div class="bpostTitle" ng-bind="post.title"></div>
-                    <span class="bpostName ng-binding">Yunite&nbsp;User,</span>
-                    <span class="bpostDate ng-binding">Jun 20, 1969 @ 11:11 AM</span>
+                    <span class="bpostName ng-binding">{{author.first_name}}&nbsp;{{author.last_name}},</span>
+                    <span class="bpostDate ng-binding">{{ dateNow | date:'MMM dd, yyyy @ h:mm a'}}</span>
                 </div>
             </div>
             <div data-ng-bind-html="post.body | unsafe" class="bpostContent"></div>
@@ -46,7 +61,7 @@
            
     <div class="manage-panel" panel-name="editdelete" ng-hide="activePanel != 'editdelete'">
         <div ng-controller="editDeleteController" ng-init="getPosts()">
-             <div ng-repeat="post in myPosts" class="bpost" ng-class="{bpostEdit: !post.show}">
+             <div ng-repeat="post in myPosts | orderBy: 'pub_date':true" class="bpost" ng-class="{bpostEdit: !post.show}">
                 
                 <div class="bpostInfo">
                     <div class="bpostControls">
@@ -63,11 +78,11 @@
                         </div>
                     </div>
                     
-                    <img ng-src="http://i.imgur.com/7pBHzOW.png?1" title="Benjamin" width="60" height="60" class="bpostAvatar">
+                    <img ng-src="{{author.img}}" title="Benjamin" width="60" height="60" class="bpostAvatar">
                     <div class="bpostInfoRight">
                         <div class="bpostTitle" ng-bind="post.title"></div>
-                        <span class="bpostName ng-binding">Yunite&nbsp;User,</span>
-                        <span class="bpostDate ng-binding">Jun 20, 1969 @ 11:11 AM</span>
+                        <span class="bpostName ng-binding">{{author.first_name}}&nbsp;{{author.last_name}},</span>
+                        <span class="bpostDate ng-binding">{{ post.pub_date | date:'MMM dd, yyyy @ h:mm a'}}</span>
                     </div>
 
                 </div>
@@ -75,10 +90,10 @@
                 <form role="form" ng-hide="!post.show">
                     <div>
                         <div>
-                            <input type="title" class="form-control titleField" ng-model="post.title" placeholder="Title" >
+                            <input type="title" class="form-control titleField" ng-model="post.title" placeholder="Title" required>
                         </div>
                         
-                        <div text-angular ng-model="post.body" class="postField"></div>
+                        <div text-angular ng-model="post.body" class="postField" required></div>
 
                         <div>
                             <input type="button" ng-click="editPost(post)" value="Edit post" class="btn btn-default submitButton">

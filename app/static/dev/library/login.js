@@ -21,18 +21,20 @@
         growlProvider.globalTimeToLive(5000);
     });
 
-    app.controller('loginController', ["$http","$scope","loginValidate","createUser",function($http,$scope,loginValidate,createUser){
+    app.controller('loginController', ["$http","$scope","loginValidate","createUser","$timeout",function($http,$scope,loginValidate,createUser,$timeout){
         
         $scope.checkForm=function(){
             loginValidate($scope.user).success($scope.loginSuccess).error($scope.loginFailure);
         };
 
         $scope.loginSuccess = function(data){
-            document.location='/manage'
+            $scope.goodLogin = true;
+            $timeout(function(){document.location='/manage';},800);
         };
 
         $scope.loginFailure = function(data){
-            console.log(data);
+            $scope.badLogin = true;
+            $timeout(function(){$scope.badLogin = false;},1000);
         };
 
         $scope.createUser=function(){

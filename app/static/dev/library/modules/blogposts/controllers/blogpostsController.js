@@ -24,10 +24,7 @@
       }
 
       $scope.updatePosts = function(data){
-        $rootScope.result = eval(data);
-        //$rootScope.posts = $rootScope.result.
-        $rootScope.posts = eval($rootScope.result.result.data);
-        console.log($rootScope.posts);
+        $rootScope.posts = JSON.parse(data.result.data);
         $rootScope.$emit('newPostsEvent');
         $scope.posts = $rootScope.posts;
         setTimeout(function(){$scope.activePost();},1000);
@@ -40,7 +37,7 @@
         for(var i=0; i < $(".content_scroller").children().length ; i++)
         {
           pTop = $(".content_scroller").children().eq(i).position().top + $(".content_scroller").children().eq(i).height();
-          if(pTop >= 0){
+          if(pTop >= 0){            
             $(".card[card-id='"+$(".content_scroller").children().eq(i).attr("post_id")+"']").trigger("activate");
             break;
           }

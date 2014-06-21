@@ -11,8 +11,8 @@ textAngularSetup = angular.module('textAngularSetup', []);
 // Here we set up the global display defaults, to set your own use a angular $provider#decorator.
 textAngularSetup.value('taOptions',  {
 	toolbar: [
-		['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
-		['bold', 'italics', 'underline', 'ul', 'ol', 'redo', 'undo', 'clear'],
+		['h1', 'h2', 'h3'],
+		['bold', 'italics', 'ul', 'ol', 'redo', 'undo', 'clear'],
 		['justifyLeft','justifyCenter','justifyRight'],
 		['html', 'insertImage', 'insertLink', 'insertVideo']
 	],

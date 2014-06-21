@@ -23,12 +23,14 @@
     
     });
 
-    app.controller('manageController', ['$http','$scope','createPost','logout', function($http,$scope,createPost,logout){
+    app.controller('manageController', ['$http','$scope','createPost','logout',"getAuthor", function($http,$scope,createPost,logout,getAuthor){
         $scope.activePanel = 'add';
+        $scope.editUser = {};
+        $scope.dateNow = Date.now();
 
         $scope.createPost=function(){
             createPost($scope.post).success($scope.createSuccess).error($scope.createFailure);
-            }
+        };
 
         $scope.createSuccess = function(data){
                 document.location = '/';
@@ -49,19 +51,32 @@
         $scope.logoutFailure = function(){
                 console.log(data);
             };
+
+        $scope.editUser.send = function(){
+            return 1;
+        };
+
+        getAuthor().success(function(data){
+            $scope.author = JSON.parse(data.result.data);
+            $scope.editUser = JSON.parse(data.result.data);  
+        }); 
     }]);
 
-    app.controller("editDeleteController",["$scope","getMyPosts","deletePost","editPost",function($scope,getMyPosts,deletePost,editPost){
+    app.controller("editDeleteController",["$scope","getMyPosts","deletePost","editPost","getAuthor",function($scope,getMyPosts,deletePost,editPost){
+
         $scope.getPosts = function()
         {
             getMyPosts().success(function(d){
-                $scope.myPosts = eval(eval(d).result.data);
-                console.log($scope.myPosts[0]);
+                $scope.myPosts = JSON.parse(d.result.data);
+                console.log($scope.myPosts);
             }).error();
         }
 
         $scope.deletePost = function(post_id){
-            deletePost(post_id).success($scope.getPosts); 
+            if(confirm("Are you sure you want to delete this post?"))
+            {
+                deletePost(post_id).success($scope.getPosts); 
+            }
         }
 
         $scope.editPost=function(post_id){
@@ -95,6 +110,16 @@
                 method:'POST', 
                 url:'/manage/edit_post/'+post.id,
                 data:post,
+                headers:{'Content-Type':'application/json'}
+            })
+        }; 
+    }]);
+
+    app.factory('getAuthor', ['$http', function($http){
+        return function(){
+            return $http({
+                method:'POST', 
+                url:'/manage/me',
                 headers:{'Content-Type':'application/json'}
             })
         }; 

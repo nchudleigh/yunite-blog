@@ -152,7 +152,7 @@
   .container .drawer #page_top div {
     margin-top: 15px;
     font-size: 11pt;
-    padding-left: 60px;
+    padding-left: 65px;
   }
   /* line 58, scss/_content.scss */
   .container .drawer #page_top:hover {
@@ -228,7 +228,11 @@
   .bpost .bpostInfo .bpostDate {
     font-size: 8pt;
   }
-  /* line 52, scss/_blogpost.scss */
+  /* line 50, scss/_blogpost.scss */
+  .bpost .bpostContent {
+    font-size: 12pt;
+  }
+  /* line 53, scss/_blogpost.scss */
   .bpost .bpostContent h1, .bpost .bpostContent h2 {
     font-size: 18pt;
     margin-top: 0px;
@@ -237,42 +241,42 @@
     border-bottom: 1px solid #dedede;
     padding-bottom: 8px;
   }
-  /* line 62, scss/_blogpost.scss */
+  /* line 63, scss/_blogpost.scss */
   .bpost .bpostContent h2 {
     font-size: 16pt;
   }
-  /* line 66, scss/_blogpost.scss */
+  /* line 67, scss/_blogpost.scss */
   .bpost .bpostContent ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  /* line 72, scss/_blogpost.scss */
+  /* line 73, scss/_blogpost.scss */
   .bpost .bpostContent ul > li {
     padding-left: 1em;
     text-indent: -.7em;
   }
-  /* line 77, scss/_blogpost.scss */
+  /* line 78, scss/_blogpost.scss */
   .bpost .bpostContent ul > li:before {
     content: "■ ";
     padding-right: 6px;
     color: #008cba;
     /* or whatever color you prefer */
   }
-  /* line 84, scss/_blogpost.scss */
+  /* line 85, scss/_blogpost.scss */
   .bpost .bpostContent a {
     color: #008cba;
     text-decoration: none;
   }
-  /* line 90, scss/_blogpost.scss */
+  /* line 91, scss/_blogpost.scss */
   .bpost .bpostContent a:hover {
     color: #006687;
   }
-  /* line 95, scss/_blogpost.scss */
+  /* line 96, scss/_blogpost.scss */
   .bpost .bpostContent a:visited {
     color: #00526e;
   }
-  /* line 99, scss/_blogpost.scss */
+  /* line 100, scss/_blogpost.scss */
   .bpost .bpostContent img {
     width: 100%;
     margin: 10px 0;
@@ -281,7 +285,7 @@
     border-bottom: 1px solid #dedede;
     border-top: 1px solid #dedede;
   }
-  /* line 110, scss/_blogpost.scss */
+  /* line 111, scss/_blogpost.scss */
   .bpost .bpostImage {
     width: 100%;
     padding-bottom: 15px;
@@ -421,9 +425,9 @@
     max-width: 1000px;
     width: 80%;
     background-color: #FFF;
-    border: 15px solid #dedede;
+    border: 10px solid #dedede;
     margin: 10px auto;
-    padding: 15px 15px;
+    padding: 10px 10px;
   }
   /* line 11, scss/_blogpost.mobile.scss */
   .bpost .bpostInfo {
@@ -509,7 +513,15 @@
   .bpost .bpostContent a:visited {
     color: #00526e;
   }
-  /* line 102, scss/_blogpost.mobile.scss */
+  /* line 100, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent img {
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+  }
+  /* line 111, scss/_blogpost.mobile.scss */
   .bpost .bpostImage {
     width: 100%;
     padding-bottom: 15px;
