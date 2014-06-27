@@ -1,94 +1,114 @@
-/* line 50, scss/manage.scss */
+/* line 49, scss/manage.scss */
+body {
+  overflow: auto !important;
+}
+
+/* line 54, scss/manage.scss */
+.top_bar {
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+}
+
+/* line 60, scss/manage.scss */
 .submitButton {
   margin-top: 15px;
   width: 200px;
 }
 
-/* line 55, scss/manage.scss */
+/* line 65, scss/manage.scss */
 .logoutBtn {
   margin: 10px;
 }
 
-/* line 59, scss/manage.scss */
+/* line 69, scss/manage.scss */
 .custForm {
   width: 100px;
 }
 
-/* line 64, scss/manage.scss */
+/* line 74, scss/manage.scss */
 .loginForm {
   width: 500px;
   margin-top: 12px;
 }
 
-/* line 70, scss/manage.scss */
+/* line 80, scss/manage.scss */
 .goodLogin {
   background-color: #8AFFA8 !important;
 }
 
-/* line 75, scss/manage.scss */
+/* line 85, scss/manage.scss */
 .badLogin {
   background-color: #FFB2B2 !important;
 }
 
-/* line 80, scss/manage.scss */
+/* line 90, scss/manage.scss */
 .loginFormIn {
   width: 200px !important;
   display: inline-block !important;
   margin: 0px 5px;
 }
 
-/* line 86, scss/manage.scss */
+/* line 96, scss/manage.scss */
 .loveYouJon {
   width: 200px;
   margin: auto;
 }
 
-/* line 91, scss/manage.scss */
+/* line 101, scss/manage.scss */
 .loveYouJon input {
   margin: 5px;
 }
 
-/* line 94, scss/manage.scss */
+/* line 104, scss/manage.scss */
 .marginTop {
   margin-top: 100px;
 }
 
-/* line 98, scss/manage.scss */
+/* line 108, scss/manage.scss */
 .registerBtn {
   width: 100px !important;
   margin: auto !important;
   display: inline-block;
 }
 
-/* line 106, scss/manage.scss */
+/* line 116, scss/manage.scss */
 .manage-panel {
   max-width: 1200px;
   width: 90%;
   background-color: #FFF;
   border: 15px solid #dedede;
   margin: 10px auto;
+  margin-top: 115px;
   padding: 20px 20px;
 }
-/* line 115, scss/manage.scss */
+/* line 126, scss/manage.scss */
 .manage-panel .ta-toolbar {
   margin: 15px auto;
 }
 
-/* line 121, scss/manage.scss */
+/* line 132, scss/manage.scss */
 .previewTitle {
   text-align: center;
   font-size: 14pt;
   color: #008cba;
 }
 
-/* line 128, scss/manage.scss */
+/* line 139, scss/manage.scss */
 .panel-nav {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  z-index: 1000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   padding: 10px 0px;
   background-color: #FFF;
   text-align: center;
   border-bottom: 1px solid #BDBDBD;
 }
-/* line 130, scss/manage.scss */
+/* line 148, scss/manage.scss */
 .panel-nav .panel-nav-item {
   width: 150px;
   text-align: center;
@@ -100,24 +120,25 @@
   margin: 10px 5px;
   background-color: #dedede;
   cursor: pointer;
+  border: 1px solid #A3A3A3;
 }
-/* line 142, scss/manage.scss */
+/* line 161, scss/manage.scss */
 .panel-nav .panel-nav-item:hover {
   background-color: #d1d1d1;
 }
-/* line 147, scss/manage.scss */
+/* line 166, scss/manage.scss */
 .panel-nav .panel-nav-item:active, .panel-nav .panelnavitemactive {
   background-color: #b8b8b8;
 }
 
-/* line 160, scss/manage.scss */
+/* line 179, scss/manage.scss */
 .bpostEdit .bpostInfo {
   border: none;
   padding: 0 0;
   margin: 0 0;
 }
 
-/* line 168, scss/manage.scss */
+/* line 187, scss/manage.scss */
 .bpostControls {
   float: right;
   width: 300px;
@@ -125,7 +146,7 @@
   position: relative;
   padding-right: 10px;
 }
-/* line 179, scss/manage.scss */
+/* line 198, scss/manage.scss */
 .bpostControls .bpostDelete, .bpostControls .bpostEditb {
   height: 30px;
   -webkit-border-radius: 15px;
@@ -138,21 +159,24 @@
   float: right;
   cursor: pointer;
 }
-/* line 191, scss/manage.scss */
+/* line 210, scss/manage.scss */
 .bpostControls .bpostDelete {
   background-color: #ca3535;
   width: 90px;
   right: 0px;
   color: #E9E9E9;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
-/* line 197, scss/manage.scss */
+/* line 217, scss/manage.scss */
 .bpostControls .bpostDelete .text {
   position: absolute;
   display: inline-block;
   bottom: 4.5px;
   left: 35px;
 }
-/* line 205, scss/manage.scss */
+/* line 225, scss/manage.scss */
 .bpostControls .bpostDelete .button {
   background-color: #a22a2a;
   -webkit-border-radius: 15px;
@@ -163,35 +187,38 @@
   height: 100%;
   position: relative;
 }
-/* line 213, scss/manage.scss */
+/* line 233, scss/manage.scss */
 .bpostControls .bpostDelete .button .x {
   position: absolute;
   top: 5px;
   left: 10px;
 }
-/* line 222, scss/manage.scss */
+/* line 242, scss/manage.scss */
 .bpostControls .bpostDelete:hover {
   background-color: #d15151;
 }
-/* line 227, scss/manage.scss */
+/* line 247, scss/manage.scss */
 .bpostControls .bpostEditb:hover {
   background-color: #72de85;
 }
-/* line 232, scss/manage.scss */
+/* line 252, scss/manage.scss */
 .bpostControls .bpostEditb {
   background-color: #49d461;
   width: 75px;
   right: 10px;
   color: #FFF;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
-/* line 238, scss/manage.scss */
+/* line 259, scss/manage.scss */
 .bpostControls .bpostEditb .text {
   position: absolute;
   display: inline-block;
   bottom: 4.5px;
   left: 35px;
 }
-/* line 246, scss/manage.scss */
+/* line 267, scss/manage.scss */
 .bpostControls .bpostEditb .button {
   background-color: #239436;
   -webkit-border-radius: 15px;
@@ -202,7 +229,7 @@
   height: 100%;
   position: relative;
 }
-/* line 254, scss/manage.scss */
+/* line 275, scss/manage.scss */
 .bpostControls .bpostEditb .button .x {
   position: absolute;
   top: 4px;
@@ -210,23 +237,27 @@
   font-size: 13pt;
 }
 
-/* line 265, scss/manage.scss */
+/* line 286, scss/manage.scss */
 .ta-editor {
-  min-height: 500px;
+  min-height: 400px;
   height: auto;
 }
-/* line 270, scss/manage.scss */
+/* line 291, scss/manage.scss */
 .ta-editor div[contenteditable='true'] {
   height: 100%;
 }
+/* line 294, scss/manage.scss */
+.ta-editor div[contenteditable='true'] img {
+  width: 20% !important;
+}
 
-/* line 276, scss/manage.scss */
+/* line 301, scss/manage.scss */
 .editUser {
   width: 300px;
   margin: 0px auto !important;
   margin-bottom: 10px !important;
 }
-/* line 281, scss/manage.scss */
+/* line 306, scss/manage.scss */
 .editUser .bpostAvatar {
   float: left;
   width: 60px;
@@ -237,8 +268,18 @@
   margin-right: 20px;
   margin-left: 20px;
 }
-/* line 291, scss/manage.scss */
+/* line 316, scss/manage.scss */
 .editUser .field {
   width: 100%;
   margin: 15px auto;
+}
+
+/* line 322, scss/manage.scss */
+.growl {
+  position: fixed;
+  z-index: 1000 !important;
+  top: 115px;
+  right: 8px;
+  float: right;
+  width: 250px;
 }

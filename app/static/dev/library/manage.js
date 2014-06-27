@@ -9,6 +9,7 @@
       , 'angular-growl'
       , 'sharedData'
       , 'textAngular'
+      , 'ngSanitize'
     ])
     
     .config(function($stateProvider, $sceProvider, $urlRouterProvider, $logProvider, $translateProvider, growlProvider) {
@@ -19,11 +20,11 @@
                 
         $translateProvider.preferredLanguage('en');
         $logProvider.debugEnabled(true);
-        growlProvider.globalTimeToLive(5000);
+        growlProvider.globalTimeToLive(2000);
     
     });
 
-    app.controller('manageController', ['$http','$scope','createPost','logout',"getAuthor", function($http,$scope,createPost,logout,getAuthor){
+    app.controller('manageController', ['$http','$scope','createPost','logout',"getAuthor","editMyUser","growl", function($http,$scope,createPost,logout,getAuthor,editMyUser,growl){
         $scope.activePanel = 'add';
         $scope.editUser = {};
         $scope.dateNow = Date.now();
@@ -33,7 +34,12 @@
         };
 
         $scope.createSuccess = function(data){
-                document.location = '/';
+                growl.addSuccessMessage("Blog Post Created!");
+                // Set form to pristine and click on edit/delete button
+                $scope.post.title = "";
+                $scope.post.body = "";
+
+                setTimeout(function(){$(".panel-nav-item").eq(1).trigger("click");},200);
             };
 
         $scope.createFailure = function(data){
@@ -52,8 +58,12 @@
                 console.log(data);
             };
 
-        $scope.editUser.send = function(){
-            return 1;
+        $scope.sendMyUser = function(){
+            console.log($scope.editUser)
+            editMyUser($scope.editUser).success(function(){
+                getAuthor();
+                growl.addSuccessMessage("Updated User Info!");
+            });
         };
 
         getAuthor().success(function(data){
@@ -62,13 +72,12 @@
         }); 
     }]);
 
-    app.controller("editDeleteController",["$scope","getMyPosts","deletePost","editPost","getAuthor",function($scope,getMyPosts,deletePost,editPost){
+    app.controller("editDeleteController",["$scope","getMyPosts","deletePost","editPost","getAuthor","growl",function($scope,getMyPosts,deletePost,editPost,getAuthor,growl){
 
         $scope.getPosts = function()
         {
             getMyPosts().success(function(d){
                 $scope.myPosts = JSON.parse(d.result.data);
-                console.log($scope.myPosts);
             }).error();
         }
 
@@ -80,8 +89,13 @@
         }
 
         $scope.editPost=function(post_id){
-            editPost(post_id).success($scope.getPosts);
+            editPost(post_id).success($scope.editSuccess);
         }
+
+        $scope.editSuccess = function(){
+            $scope.getPosts();
+            growl.addSuccessMessage("Edited Post!");
+        };
 
     }]);
 
@@ -104,7 +118,8 @@
             })
         }; 
 
-    }]);app.factory('editPost', ['$http', function($http){
+    }]);
+    app.factory('editPost', ['$http', function($http){
         return function(post){
             return $http({
                 method:'POST', 
@@ -120,6 +135,17 @@
             return $http({
                 method:'POST', 
                 url:'/manage/me',
+                headers:{'Content-Type':'application/json'}
+            })
+        }; 
+    }]);
+
+    app.factory('editMyUser', ['$http', function($http){
+        return function(user){
+            return $http({
+                method:'POST', 
+                data: JSON.stringify(user),
+                url:'/manage/edit_user',
                 headers:{'Content-Type':'application/json'}
             })
         }; 

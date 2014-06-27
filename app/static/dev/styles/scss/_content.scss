@@ -53,13 +53,13 @@
 				padding-left:65px;
 			}
 		}
-
-		#page_top:hover
+		
+		#page_top:active
 		{
 			background-color:darken($yunite-lblue,2%);
 			border:2px solid darken($yunite-lblue,2%);
 		}
-
+		
 		.drawer_scroller
 		{
 			width:100%;

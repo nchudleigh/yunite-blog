@@ -1,0 +1,61 @@
+.shareButtons
+{
+	height:30px;
+	font-size:11pt;
+	.showUrlContainer
+	{
+		width:19px;
+		height:19px;
+		float:left;
+		cursor: pointer;
+		background-color:#FFF;
+		border:1px solid #777777;
+		@include border-radius(3px);
+		img{
+			margin-top:2.5px;
+			margin-left:2.6px;
+		}
+	}
+
+	.urlContainer
+	{
+		@include single-transition(width); 
+		width:0px;
+		opacity:0;
+		font-size:8pt;
+		@include border-radius(2px);
+		outline:none;
+		border:1px solid #777777;
+		color:#777777;
+		vertical-align: top;
+		height:15px;
+	}
+
+	.urlContainer_show
+	{
+		padding:2px 2px;
+		margin-left:4px;
+		width:120px;
+		opacity:1;
+		margin-right:4px;
+	}
+
+	.twitter-share-button
+	{
+		height:20px;
+		text-decoration: none;
+	}
+
+	.fb-share-button
+	{
+		vertical-align: top;
+	}
+
+	.IN-widget
+	{
+		vertical-align: top !important;
+		display:inline-block !important;
+		height:20px;
+		margin-left:5px;
+	}
+}

@@ -67,26 +67,27 @@
     font-family: "rooney-sans", sans-serif;
     background-image: url(/assets/images/halftone.png);
     background-repeat: repeat;
+    overflow: hidden;
   }
 
-  /* line 11, scss/_header.scss */
+  /* line 12, scss/_header.scss */
   .top_bar {
     height: 60px;
     width: 100%;
     background-color: #008cba;
   }
-  /* line 17, scss/_header.scss */
+  /* line 18, scss/_header.scss */
   .top_bar .mobile_menu {
     display: none;
   }
-  /* line 22, scss/_header.scss */
+  /* line 23, scss/_header.scss */
   .top_bar .logo {
     width: 240px;
     position: relative;
     margin: 0 0;
     padding: 0 20px;
   }
-  /* line 28, scss/_header.scss */
+  /* line 29, scss/_header.scss */
   .top_bar .logo a {
     margin: 0 40.5px;
   }
@@ -155,7 +156,7 @@
     padding-left: 65px;
   }
   /* line 58, scss/_content.scss */
-  .container .drawer #page_top:hover {
+  .container .drawer #page_top:active {
     background-color: #0084b0;
     border: 2px solid #0084b0;
   }
@@ -191,15 +192,16 @@
     border: 15px solid #dedede;
     margin: 10px auto;
     padding: 15px 15px;
+    padding-bottom: 5px;
   }
-  /* line 11, scss/_blogpost.scss */
+  /* line 12, scss/_blogpost.scss */
   .bpost .bpostInfo {
     width: 100%;
     border-bottom: 1px solid #dedede;
     height: 70px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
-  /* line 18, scss/_blogpost.scss */
+  /* line 19, scss/_blogpost.scss */
   .bpost .bpostInfo .bpostAvatar {
     float: left;
     width: 60px;
@@ -209,7 +211,7 @@
     border-radius: 50%;
     margin-right: 10px;
   }
-  /* line 27, scss/_blogpost.scss */
+  /* line 28, scss/_blogpost.scss */
   .bpost .bpostInfo .bpostTitle {
     font-size: 18pt;
     margin-bottom: 0px;
@@ -220,77 +222,148 @@
     white-space: nowrap;
     overflow: hidden;
   }
-  /* line 39, scss/_blogpost.scss */
+  /* line 40, scss/_blogpost.scss */
   .bpost .bpostInfo .bpostName {
     font-size: 8pt;
   }
-  /* line 44, scss/_blogpost.scss */
+  /* line 45, scss/_blogpost.scss */
   .bpost .bpostInfo .bpostDate {
     font-size: 8pt;
   }
-  /* line 50, scss/_blogpost.scss */
+  /* line 51, scss/_blogpost.scss */
   .bpost .bpostContent {
-    font-size: 12pt;
+    font-size: 11pt;
   }
-  /* line 53, scss/_blogpost.scss */
+  /* line 54, scss/_blogpost.scss */
   .bpost .bpostContent h1, .bpost .bpostContent h2 {
-    font-size: 18pt;
+    font-size: 16pt;
     margin-top: 0px;
     padding: 0 0;
     color: #008cba;
     border-bottom: 1px solid #dedede;
     padding-bottom: 8px;
   }
-  /* line 63, scss/_blogpost.scss */
+  /* line 64, scss/_blogpost.scss */
   .bpost .bpostContent h2 {
-    font-size: 16pt;
+    font-size: 15pt;
   }
-  /* line 67, scss/_blogpost.scss */
+  /* line 68, scss/_blogpost.scss */
   .bpost .bpostContent ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  /* line 73, scss/_blogpost.scss */
+  /* line 74, scss/_blogpost.scss */
   .bpost .bpostContent ul > li {
     padding-left: 1em;
     text-indent: -.7em;
   }
-  /* line 78, scss/_blogpost.scss */
+  /* line 79, scss/_blogpost.scss */
   .bpost .bpostContent ul > li:before {
     content: "■ ";
     padding-right: 6px;
     color: #008cba;
     /* or whatever color you prefer */
   }
-  /* line 85, scss/_blogpost.scss */
+  /* line 86, scss/_blogpost.scss */
   .bpost .bpostContent a {
     color: #008cba;
     text-decoration: none;
   }
-  /* line 91, scss/_blogpost.scss */
+  /* line 92, scss/_blogpost.scss */
   .bpost .bpostContent a:hover {
     color: #006687;
   }
-  /* line 96, scss/_blogpost.scss */
+  /* line 97, scss/_blogpost.scss */
   .bpost .bpostContent a:visited {
     color: #00526e;
   }
-  /* line 100, scss/_blogpost.scss */
+  /* line 101, scss/_blogpost.scss */
   .bpost .bpostContent img {
     width: 100%;
+  }
+  /* line 109, scss/_blogpost.scss */
+  .bpost .bpostContent p {
+    border-bottom: 1px solid #dedede;
     margin: 10px 0;
     padding-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: 1px solid #dedede;
-    border-top: 1px solid #dedede;
   }
-  /* line 111, scss/_blogpost.scss */
+  /* line 116, scss/_blogpost.scss */
+  .bpost .bpostContent iframe {
+    width: 100% !important;
+    border: none;
+  }
+  /* line 123, scss/_blogpost.scss */
   .bpost .bpostImage {
     width: 100%;
     padding-bottom: 15px;
     margin-bottom: 10px;
     border-bottom: 1px solid #dedede;
+  }
+
+  /* line 2, scss/_sharebuttons.scss */
+  .shareButtons {
+    height: 30px;
+    font-size: 11pt;
+  }
+  /* line 6, scss/_sharebuttons.scss */
+  .shareButtons .showUrlContainer {
+    width: 19px;
+    height: 19px;
+    float: left;
+    cursor: pointer;
+    background-color: #FFF;
+    border: 1px solid #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  /* line 14, scss/_sharebuttons.scss */
+  .shareButtons .showUrlContainer img {
+    margin-top: 2.5px;
+    margin-left: 2.6px;
+  }
+  /* line 21, scss/_sharebuttons.scss */
+  .shareButtons .urlContainer {
+    -webkit-transition: width 400ms;
+    -moz-transition: width 400ms;
+    -o-transition: width 400ms;
+    transition: width 400ms;
+    width: 0px;
+    opacity: 0;
+    font-size: 8pt;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid #777777;
+    color: #777777;
+    vertical-align: top;
+    height: 15px;
+  }
+  /* line 35, scss/_sharebuttons.scss */
+  .shareButtons .urlContainer_show {
+    padding: 2px 2px;
+    margin-left: 4px;
+    width: 120px;
+    opacity: 1;
+    margin-right: 4px;
+  }
+  /* line 44, scss/_sharebuttons.scss */
+  .shareButtons .twitter-share-button {
+    height: 20px;
+    text-decoration: none;
+  }
+  /* line 50, scss/_sharebuttons.scss */
+  .shareButtons .fb-share-button {
+    vertical-align: top;
+  }
+  /* line 55, scss/_sharebuttons.scss */
+  .shareButtons .IN-widget {
+    vertical-align: top !important;
+    display: inline-block !important;
+    height: 20px;
+    margin-left: 5px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -331,9 +404,10 @@
     top: 60px;
     bottom: 0px;
     overflow: hidden;
+    -webkit-overflow-scrolling: touch;
     margin: 0 0;
   }
-  /* line 11, scss/_content.mobile.scss */
+  /* line 12, scss/_content.mobile.scss */
   .container .drawer {
     -webkit-transition: margin-left 400ms;
     -moz-transition: margin-left 400ms;
@@ -348,7 +422,7 @@
     overflow-x: hidden;
     position: absolute;
   }
-  /* line 22, scss/_content.mobile.scss */
+  /* line 23, scss/_content.mobile.scss */
   .container .drawer #page_top {
     -webkit-transition: background-color 400ms;
     -moz-transition: background-color 400ms;
@@ -369,9 +443,9 @@
     border-left: 2px solid #0084b0;
     height: 45px;
     width: 283px;
-    position: fixed;
+    position: absolute;
   }
-  /* line 39, scss/_content.mobile.scss */
+  /* line 40, scss/_content.mobile.scss */
   .container .drawer #page_top img {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -382,39 +456,41 @@
     left: 12px;
     background-color: #003f54;
   }
-  /* line 49, scss/_content.mobile.scss */
+  /* line 50, scss/_content.mobile.scss */
   .container .drawer #page_top div {
     margin-top: 15px;
     font-size: 11pt;
     padding-left: 65px;
   }
-  /* line 57, scss/_content.mobile.scss */
+  /* line 58, scss/_content.mobile.scss */
   .container .drawer #page_top:active {
     background-color: #0084b0;
     border: 2px solid #0084b0;
   }
-  /* line 63, scss/_content.mobile.scss */
+  /* line 64, scss/_content.mobile.scss */
   .container .drawer .drawer_scroller {
     width: inherit;
     margin-top: 77px;
   }
-  /* line 70, scss/_content.mobile.scss */
+  /* line 71, scss/_content.mobile.scss */
   .container .drawer_show {
     margin-left: 0px;
   }
-  /* line 75, scss/_content.mobile.scss */
+  /* line 76, scss/_content.mobile.scss */
   .container .drawer_hidden {
     margin-left: -300px;
   }
-  /* line 80, scss/_content.mobile.scss */
+  /* line 81, scss/_content.mobile.scss */
   .container .content {
     height: 100%;
     position: absolute;
     left: 0px;
     overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     z-index: 9;
   }
-  /* line 87, scss/_content.mobile.scss */
+  /* line 90, scss/_content.mobile.scss */
   .container .content .content_scroller {
     width: 100%;
     margin: 0 auto;
@@ -428,13 +504,14 @@
     border: 10px solid #dedede;
     margin: 10px auto;
     padding: 10px 10px;
+    padding-bottom: 5px;
   }
   /* line 11, scss/_blogpost.mobile.scss */
   .bpost .bpostInfo {
     width: 100%;
     border-bottom: 1px solid #dedede;
     height: 70px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   /* line 18, scss/_blogpost.mobile.scss */
   .bpost .bpostInfo .bpostAvatar {
@@ -471,7 +548,7 @@
   }
   /* line 53, scss/_blogpost.mobile.scss */
   .bpost .bpostContent h1, .bpost .bpostContent h2 {
-    font-size: 15pt;
+    font-size: 14pt;
     margin-top: 0px;
     padding: 0 0;
     color: #008cba;
@@ -480,7 +557,7 @@
   }
   /* line 63, scss/_blogpost.mobile.scss */
   .bpost .bpostContent h2 {
-    font-size: 14pt;
+    font-size: 13pt;
   }
   /* line 67, scss/_blogpost.mobile.scss */
   .bpost .bpostContent ul {
@@ -516,16 +593,28 @@
   /* line 100, scss/_blogpost.mobile.scss */
   .bpost .bpostContent img {
     width: 100%;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: 1px solid #dedede;
-    border-top: 1px solid #dedede;
   }
-  /* line 111, scss/_blogpost.mobile.scss */
+  /* line 108, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent p {
+    border-bottom: 1px solid #dedede;
+    margin: 10px 0;
+    padding-bottom: 10px;
+  }
+  /* line 115, scss/_blogpost.mobile.scss */
+  .bpost .bpostContent iframe {
+    width: 100% !important;
+    border: none;
+  }
+  /* line 122, scss/_blogpost.mobile.scss */
   .bpost .bpostImage {
     width: 100%;
     padding-bottom: 15px;
     margin-bottom: 10px;
     border-bottom: 1px solid #dedede;
+  }
+
+  /* line 1, scss/_sharebuttons.mobile.scss */
+  .shareButtons {
+    display: none;
   }
 }

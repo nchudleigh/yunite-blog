@@ -10,17 +10,29 @@
               var updateLinks = function(){
                 // Build url from abs and this post's id
                 var url = ($location.absUrl().replace(/post\/.*/g,"") + "post/" + element.attr("post-id"));
-
                 // Generate each share link
                 var links = {
-                  facebook : "https://www.facebook.com/sharer/sharer.php?p[url]="+encodeURIComponent(url),
-                  twitter : "https://twitter.com/share?url="+url,
+                  facebook : url,
+                  twitter : "https://twitter.com/share?via=YuniteNow&size=200&url="+url,
                   hyperlink : url,
-                  linkedin : "http://www.linkedin.com/shareArticle?mini=true&url="+url
+                  linkedin : url
                 };
-                console.log(links);
+                element.children(".urlContainer").val(links.hyperlink);
+                element.children(".fb-share-button").attr("data-href",links.facebook);
+                element.children(".twitter-share-button").attr("href",links.twitter);
+                element.children(".linkedin-share-button").attr("data-url",links.linkedin);
               };
               $timeout(updateLinks,100);
+
+              element.children(".showUrlContainer").bind("click",function(){
+                if(element.children(".urlContainer").hasClass("urlContainer_show"))
+                {
+                  element.children(".urlContainer").removeClass("urlContainer_show")
+                }else{
+                  element.children(".urlContainer").addClass("urlContainer_show")
+                }
+                  element.children(".urlContainer").select();
+              });
             }
           }
     }]);

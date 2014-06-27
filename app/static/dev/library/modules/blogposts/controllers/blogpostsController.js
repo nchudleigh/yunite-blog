@@ -13,7 +13,7 @@
           var currentWidth = window.innerWidth - $(".drawer").width();
           $(".content").width(currentWidth);
 
-          $("#page_top").css("width",$(".drawer").width()-19+"px");
+          $("#page_top").css("width",$(".drawer").width()-21+"px");
           $scope.activePost();
         }else{
           $(".content").css("width","100%");
@@ -21,13 +21,17 @@
           $("#page_top").css("width",$(".drawer").width()-5+"px");
         }
 
+        angular.element("iframe").height(angular.element("iframe").eq(0).width()*0.6);
       }
 
       $scope.updatePosts = function(data){
         $rootScope.posts = JSON.parse(data.result.data);
         $rootScope.$emit('newPostsEvent');
         $scope.posts = $rootScope.posts;
-        setTimeout(function(){$scope.activePost();},1000);
+        setTimeout(function(){angular.element("iframe").height(angular.element("iframe").eq(0).width()*0.65);},300);
+        setTimeout(function(){
+          $scope.activePost();
+        },300);
       };
 
       $scope.activePost = function()
@@ -58,6 +62,16 @@
         }
       });
 
+      angular.element(".content").bind("click",function(){
+        if(angular.element(".drawer").hasClass("drawer_show"))
+        {
+          $scope.toggleDrawer();
+        }
+      });
+
+      angular.element(".top_bar").bind("touchmove",function(e){
+        e.preventDefault();
+      });
 
       // Get blog post data
       getBlogPosts.success(function(data,status,headers,config){

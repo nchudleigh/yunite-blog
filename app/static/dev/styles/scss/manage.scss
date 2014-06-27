@@ -1,3 +1,4 @@
+@import "compass/css3/user-interface";
 // Variables
 
 $main-color: #00a89e; 
@@ -45,8 +46,17 @@ $drawerWidthMobile: 300px;
   filter: $filter-type+unquote('(#{$filter-amount})');
 }
 
-.postField{
+body{
+	overflow:auto !important;
 }
+
+.top_bar
+{
+	position:fixed;
+	top:0px;
+	z-index:1000;
+}
+
 .submitButton{
 	margin-top:15px;
 	width:200px;
@@ -109,6 +119,7 @@ $drawerWidthMobile: 300px;
 	background-color: #FFF;
 	border:15px solid $panel-border;
 	margin: 10px auto;
+	margin-top:115px;
 	padding: 20px 20px;
 
 	.ta-toolbar
@@ -126,6 +137,13 @@ $drawerWidthMobile: 300px;
 
 .panel-nav
 {
+	position:fixed;
+	top:60px;
+	width:100%;
+	z-index:1000;
+
+	@include user-select(none);
+
 	.panel-nav-item
 	{
 		width:150px;
@@ -136,6 +154,7 @@ $drawerWidthMobile: 300px;
 		margin:10px 5px;
 		background-color:$panel-border;
 		cursor:pointer;
+		border: 1px solid #A3A3A3;
 	}
 
 	.panel-nav-item:hover
@@ -193,6 +212,7 @@ $drawerWidthMobile: 300px;
 		width:90px;
 		right:0px;
 		color:#E9E9E9;
+		@include user-select(none);
 		.text
 		{
 				position:absolute;
@@ -234,6 +254,7 @@ $drawerWidthMobile: 300px;
 		width:75px;
 		right:10px;
 		color:#FFF;
+		@include user-select(none);
 		.text
 		{
 				position:absolute;
@@ -263,12 +284,16 @@ $drawerWidthMobile: 300px;
 }
 
 .ta-editor {
-    min-height: 500px;
+    min-height: 400px;
     height: auto;
 
 	div[contenteditable='true']
 	{
 		height:100%;
+
+		img{
+			width:20% !important;
+		}
 	}
 }
 
@@ -294,3 +319,11 @@ $drawerWidthMobile: 300px;
 	}
 }
 
+.growl {
+    position: fixed;
+    z-index:1000 !important;
+    top: 115px;
+    right: 8px;
+    float: right;
+    width: 250px;
+}

@@ -15,7 +15,7 @@ admin_pass='l0nGh4rDWh4l3w1LLy'
 def edit_user():
 
     data = json.loads(request.data)
-    user = User.query.get(id=current_user.id)
+    user = User.query.get(current_user.id)
 
     first_name=data.get('first_name')
     last_name=data.get('last_name')

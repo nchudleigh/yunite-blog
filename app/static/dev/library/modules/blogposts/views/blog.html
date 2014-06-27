@@ -11,7 +11,7 @@
 
 <div class="container">
     <div class="drawer drawer_hidden" ng-swipe-left="toggleDrawer();">
-        <div id="page_top" ng-click="pageTop()"><img src="/assets/images/up-arrow.png" height="60" width="60"><div>Top of posts</div></div>
+        <div id="page_top" ng-click="pageTop()"><img src="/assets/images/up-arrow.png" height="60" width="60"><div>Most Recent</div></div>
         <div class="drawer_scroller" ng-controller="sidebarController">
             <card ng-repeat="post in posts"></card>
         </div>

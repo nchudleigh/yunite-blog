@@ -20,11 +20,16 @@
               // Scroll to selected post
               var currentPost = $(".bpost[post_id='"+element.attr("card-id")+"']")
               $(".content").clearQueue().animate({scrollTop : (currentPost.offset().top - currentPost.parent().offset().top - currentPost.parent().scrollTop())},{
-                duration : aTime*3
+                duration : aTime*2
               , start: function(){$(".content").css("opacity","0.25");}
               });
 
-              setTimeout(function(){$(".content").css("opacity","1.0");},aTime*3-100);
+              setTimeout(function(){$(".content").css("opacity","1.0");},aTime*2-100);
+
+              if(angular.element(".drawer").hasClass("drawer_show"))
+              {
+                setTimeout(function(){angular.element(".mobile_menu").trigger("click");},aTime*2);
+              }
             });
 
             element.bind('activate',function(){
