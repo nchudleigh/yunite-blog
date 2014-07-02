@@ -22,7 +22,7 @@
                 element.children(".twitter-share-button").attr("href",links.twitter);
                 element.children(".linkedin-share-button").attr("data-url",links.linkedin);
               };
-              $timeout(updateLinks,100);
+              $timeout(updateLinks,200);
 
               element.children(".showUrlContainer").bind("click",function(){
                 if(element.children(".urlContainer").hasClass("urlContainer_show"))
