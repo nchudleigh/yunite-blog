@@ -303,67 +303,110 @@
 
   /* line 2, scss/_sharebuttons.scss */
   .shareButtons {
-    height: 30px;
-    font-size: 11pt;
+    /*
+     * Socialite Look-a-like defaults
+     */
   }
-  /* line 6, scss/_sharebuttons.scss */
-  .shareButtons .showUrlContainer {
-    width: 19px;
-    height: 19px;
-    float: left;
+  /* line 3, scss/_sharebuttons.scss */
+  .shareButtons .showShare {
+    background-color: #dedede;
+    display: inline-block;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     cursor: pointer;
-    background-color: #FFF;
-    border: 1px solid #777777;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    margin-bottom: 3px;
   }
-  /* line 14, scss/_sharebuttons.scss */
-  .shareButtons .showUrlContainer img {
-    margin-top: 2.5px;
-    margin-left: 2.6px;
+  /* line 13, scss/_sharebuttons.scss */
+  .shareButtons .showShare:hover {
+    background-color: #c5c5c5;
+  }
+  /* line 17, scss/_sharebuttons.scss */
+  .shareButtons .cf:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  /* line 18, scss/_sharebuttons.scss */
+  .shareButtons * html .cf {
+    zoom: 1;
+  }
+  /* line 19, scss/_sharebuttons.scss */
+  .shareButtons *:first-child + html .cf {
+    zoom: 1;
   }
   /* line 21, scss/_sharebuttons.scss */
-  .shareButtons .urlContainer {
-    -webkit-transition: width 400ms;
-    -moz-transition: width 400ms;
-    -o-transition: width 400ms;
-    transition: width 400ms;
-    width: 0px;
-    opacity: 0;
-    font-size: 8pt;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    outline: none;
-    border: 1px solid #777777;
-    color: #777777;
-    vertical-align: top;
-    height: 15px;
+  .shareButtons p, .shareButtons li {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 0 0 0.5em 0;
+  }
+  /* line 22, scss/_sharebuttons.scss */
+  .shareButtons li {
+    margin: 0 0 0.25em 0;
+  }
+  /* line 24, scss/_sharebuttons.scss */
+  .shareButtons .vhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  /* line 30, scss/_sharebuttons.scss */
+  .shareButtons .social-buttons {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+  }
+  /* line 31, scss/_sharebuttons.scss */
+  .shareButtons .social-buttons > li {
+    display: block;
+    margin: 0;
+    padding: 5px;
+    float: left;
+  }
+  /* line 32, scss/_sharebuttons.scss */
+  .shareButtons .social-buttons .socialite {
+    display: block;
+    position: relative;
+    background: url("images/social-sprite.png") 0 0 no-repeat;
+  }
+  /* line 33, scss/_sharebuttons.scss */
+  .shareButtons .social-buttons .socialite-loaded {
+    background: none !important;
   }
   /* line 35, scss/_sharebuttons.scss */
-  .shareButtons .urlContainer_show {
-    padding: 2px 2px;
-    margin-left: 4px;
-    width: 120px;
-    opacity: 1;
-    margin-right: 4px;
+  .shareButtons .social-buttons .twitter-share {
+    width: 55px;
+    height: 65px;
+    background-position: 0 0;
   }
-  /* line 44, scss/_sharebuttons.scss */
-  .shareButtons .twitter-share-button {
-    height: 20px;
-    text-decoration: none;
+  /* line 36, scss/_sharebuttons.scss */
+  .shareButtons .social-buttons .googleplus-one {
+    width: 50px;
+    height: 65px;
+    background-position: -75px 0;
   }
-  /* line 50, scss/_sharebuttons.scss */
-  .shareButtons .fb-share-button {
-    vertical-align: top;
+  /* line 37, scss/_sharebuttons.scss */
+  .shareButtons .social-buttons .facebook-like {
+    width: 50px;
+    height: 65px;
+    background-position: -145px 0;
   }
-  /* line 55, scss/_sharebuttons.scss */
-  .shareButtons .IN-widget {
-    vertical-align: top !important;
-    display: inline-block !important;
-    height: 20px;
-    margin-left: 5px;
+  /* line 38, scss/_sharebuttons.scss */
+  .shareButtons .social-buttons .linkedin-share {
+    width: 60px;
+    height: 65px;
+    background-position: -215px 0;
   }
 }
 @media screen and (max-width: 700px) {

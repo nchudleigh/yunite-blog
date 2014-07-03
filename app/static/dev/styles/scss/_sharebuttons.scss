@@ -1,61 +1,39 @@
 .shareButtons
-{
-	height:30px;
-	font-size:11pt;
-	.showUrlContainer
+{	.showShare
 	{
-		width:19px;
-		height:19px;
-		float:left;
-		cursor: pointer;
-		background-color:#FFF;
-		border:1px solid #777777;
-		@include border-radius(3px);
-		img{
-			margin-top:2.5px;
-			margin-left:2.6px;
-		}
+		background-color:$panel-border;
+		display:inline-block;
+		padding:10px;
+		@include border-radius(5px);
+		cursor:pointer;
+		margin-bottom:3px;
 	}
 
-	.urlContainer
+	.showShare:hover
 	{
-		@include single-transition(width); 
-		width:0px;
-		opacity:0;
-		font-size:8pt;
-		@include border-radius(2px);
-		outline:none;
-		border:1px solid #777777;
-		color:#777777;
-		vertical-align: top;
-		height:15px;
+		background-color:darken($panel-border,10%);
 	}
 
-	.urlContainer_show
-	{
-		padding:2px 2px;
-		margin-left:4px;
-		width:120px;
-		opacity:1;
-		margin-right:4px;
-	}
+	.cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+	* html .cf { zoom: 1; }
+	*:first-child+html .cf { zoom: 1; }
 
-	.twitter-share-button
-	{
-		height:20px;
-		text-decoration: none;
-	}
+	 p, li { font-size: 1em; line-height: 1.5em; margin: 0 0 0.5em 0; }
+	 li { margin: 0 0 0.25em 0; }
 
-	.fb-share-button
-	{
-		vertical-align: top;
-	}
+	.vhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
-	.IN-widget
-	{
-		vertical-align: top !important;
-		display:inline-block !important;
-		height:20px;
-		margin-left:5px;
-	}
+	/*
+	 * Socialite Look-a-like defaults
+	 */
+
+	.social-buttons { display: none; list-style: none; padding: 0; margin: 0px; }
+	.social-buttons > li { display: block; margin: 0; padding: 5px; float: left; }
+	.social-buttons .socialite { display: block; position: relative; background: url('images/social-sprite.png') 0 0 no-repeat; }
+	.social-buttons .socialite-loaded { background: none !important; }
+
+	.social-buttons .twitter-share { width: 55px; height: 65px; background-position: 0 0; }
+	.social-buttons .googleplus-one { width: 50px; height: 65px; background-position: -75px 0; }
+	.social-buttons .facebook-like { width: 50px; height: 65px; background-position: -145px 0; }
+	.social-buttons .linkedin-share { width: 60px; height: 65px; background-position: -215px 0; }
 }

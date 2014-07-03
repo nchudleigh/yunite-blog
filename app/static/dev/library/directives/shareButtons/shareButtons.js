@@ -7,31 +7,25 @@
             replace : true,
             templateUrl : 'library/directives/shareButtons/shareButtons.html',
             link : function(scope,element){
-              var updateLinks = function(){
+              var updateLinks = function()
+              {
                 // Build url from abs and this post's id
                 var url = ($location.absUrl().replace(/post\/.*/g,"") + "post/" + element.attr("post-id"));
-                // Generate each share link
-                var links = {
-                  facebook : url,
-                  twitter : "https://twitter.com/share?via=YuniteNow&size=200&url="+url,
-                  hyperlink : url,
-                  linkedin : url
-                };
-                element.children(".urlContainer").val(links.hyperlink);
-                element.children(".fb-share-button").attr("data-href",links.facebook);
-                element.children(".twitter-share-button").attr("href",links.twitter);
-                element.children(".linkedin-share-button").attr("data-url",links.linkedin);
-              };
-              $timeout(updateLinks,300);
+                
+                var element2 = element.children(".social_buttons");
 
-              element.children(".showUrlContainer").bind("click",function(){
-                if(element.children(".urlContainer").hasClass("urlContainer_show"))
-                {
-                  element.children(".urlContainer").removeClass("urlContainer_show")
-                }else{
-                  element.children(".urlContainer").addClass("urlContainer_show")
-                }
-                  element.children(".urlContainer").select();
+                element.find(".facebook-like").attr("data-href",url);
+                element.find(".linkedin-share").attr("data-url",url);
+                element.find(".googleplus-share").attr("data-url",url);
+                element.find(".twitter-share").attr("data-url",url);
+
+                $timeout(function(){Socialite.load(element);},500);
+              }
+              $timeout(updateLinks,500);
+
+              element.find(".showShare").click(function(){
+                $(this).remove();
+                element.find(".social-buttons").css("display","block");
               });
             }
           }
